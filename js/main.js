@@ -113,6 +113,7 @@ function init(){
   wordSerial = 0;
   pointTodayValue = parseInt(localStorage.getItem('pointTodayValue')) ?? 0;
   pointTotalValue = 1230;
+  console.log(pointTodayValue);
   
   loadPronunciation();
   loadItems()
