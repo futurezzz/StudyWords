@@ -63,7 +63,7 @@ wordArrayUl.addEventListener('keyup', (e)=>{
   matchSerialBefore = matchSerial;
   wordLis[matchSerial].value = e.code.substr(3,1);
   wordValue = e.code.substr(3,1);
-  // console.log(e.key,e.code,e.code.substr(3,1));
+  console.log(e.key,e.code,e.code.substr(3,1));
 })
 
 hintButton.addEventListener('click', ()=>{
