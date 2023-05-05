@@ -71,7 +71,7 @@
 .word-title {
   width: 100vw;
   height: 100px;
-  margin-top: 15px;
+  margin-top: 5px;
   padding-top: 30px;
   background-color: var(--title-color);
   color: var(--white);
