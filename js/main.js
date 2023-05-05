@@ -61,8 +61,8 @@ wordArrayUl.addEventListener('keyup', (e)=>{
   // matchSerialBefore에 현재 선택된 li번호를 저장했다가 
   // 한글이 입력된 경우 focus blur 할 때 영문으로 바꿔줘야 함
   matchSerialBefore = matchSerial;
-  wordLis[matchSerial].value = e.code.substr(3,1);
-  wordValue = e.code.substr(3,1);
+  // wordLis[matchSerial].value = e.code.substr(3,1);
+  wordValue = wordLis[matchSerial].value;
   console.log(e.key,e.code,e.code.substr(3,1));
 })
 
