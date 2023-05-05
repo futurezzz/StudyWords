@@ -111,9 +111,10 @@ nextButton.addEventListener('click',()=>{
 
 function init(){
   wordSerial = 0;
-  pointTodayValue = parseInt(localStorage.getItem('pointTodayValue')) ?? 0;
-  pointTotalValue = 1230;
-  console.log(pointTodayValue);
+
+  // pointTodayValue는 전역정보로 받아온다. 만일 전역정보가 없다면 || (falsy) 기본값 0을 제공한다.
+  pointTodayValue = parseInt(localStorage.getItem('pointTodayValue')) || 0;
+  pointTotalValue = 1500;
   
   loadPronunciation();
   loadItems()
