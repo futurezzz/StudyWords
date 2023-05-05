@@ -111,7 +111,7 @@ nextButton.addEventListener('click',()=>{
 
 function init(){
   wordSerial = 0;
-  pointTodayValue = parseInt(localStorage.getItem('pointTodayValue'));
+  pointTodayValue = parseInt(localStorage.getItem('pointTodayValue')) ?? 0;
   pointTotalValue = 1230;
   
   loadPronunciation();
