@@ -70,12 +70,13 @@
 
 .word-title {
   width: 100vw;
-  height: 150px;
-  padding-top: 60px;
+  height: 100px;
+  margin-top: 15px;
+  padding-top: 30px;
   background-color: var(--title-color);
   color: var(--white);
   font-size: 25px;
-  line-height: 26px;
+  line-height: 23px;
 }
 /* .word-title-up, .word-title-down {
   height: 30px;
@@ -94,7 +95,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 130px;
+  height: 80px;
   width: 90vw;
   color: var(--black-color);
 }
@@ -154,11 +155,11 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 30px;
   width: 250px;
-  height: 70px;
-  background-color: rgb(255, 87, 25);
-  border-radius: 150px/42px;
+  height: 80px;
+  background-color: #ff703c;
+  border-radius: 150px/45px;
   color: #333;
 }
 
@@ -200,8 +201,8 @@ input {
 
 .listen-button {
   visibility: hidden;
-  width: 120px;
-  height: 45px;
+  width: 100px;
+  height: 40px;
   background-color: #eee;
   border: 1px solid #ccc;
   /* box-shadow: 3px 3px 2px #ccc; */
@@ -221,7 +222,7 @@ input {
   width: 100px;
   height: 35px;
   line-height: 35px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   background-color: #333;
   color: var(--white);
   border-radius: 8px;
