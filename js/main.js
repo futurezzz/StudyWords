@@ -50,20 +50,22 @@ mainUnit.addEventListener('click', (e)=> {
   mainUnit.style.visibility = 'hidden';
 })
 // input에 알파벳을 넣고 다른 칸이나 빈회면을 클릭하였을 때 정답을 체크함
-window.addEventListener('click',(e)=>{
-  isCorrect();
-})
+// window.addEventListener('click',(e)=>{
+//   console.log(e.target)
+//   isCorrect();
+// })
 
 wordArrayUl.addEventListener('keyup', (e)=>{
   // matchSerial은 현재 몇번째 li를 클릭했는지 나타냄.
   matchSerial = e.target.dataset.serial;
-  console.log(wordArray[wordSerial].word[matchSerial])
+  // console.log(wordArray[wordSerial].word[matchSerial])
   // matchSerialBefore에 현재 선택된 li번호를 저장했다가 
   // 한글이 입력된 경우 focus blur 할 때 영문으로 바꿔줘야 함
   matchSerialBefore = matchSerial;
   // wordLis[matchSerial].value = e.code.substr(3,1);
   wordValue = wordLis[matchSerial].value;
   console.log(e.key,e.code,e.code.substr(3,1));
+  isCorrect();
 })
 
 hintButton.addEventListener('click', ()=>{
@@ -98,8 +100,6 @@ listenButton.addEventListener('click', ()=>{
 })
 
 nextButton.addEventListener('click',()=>{
-  wordSerial++;
-  console.log(wordSerial);
   displayButtons();
   displayItems(wordArray)
 })
@@ -110,11 +110,11 @@ nextButton.addEventListener('click',()=>{
 // functions-------------------------------------------------------------
 
 function init(){
-  wordSerial = 0;
-
+  // wordSerial = 0;
+  wordSerial = parseInt(localStorage.getItem('wordSerial')) || 0;
   // pointTodayValue는 전역정보로 받아온다. 만일 전역정보가 없다면 || (falsy) 기본값 0을 제공한다.
   pointTodayValue = parseInt(localStorage.getItem('pointTodayValue')) || 0;
-  pointTotalValue = 1500;
+  pointTotalValue = 1500 + pointTodayValue;
   
   loadPronunciation();
   loadItems()
@@ -172,6 +172,11 @@ function afterCorrect(){
   console.log(wordArray[wordSerial].word);
   speech(wordArray[wordSerial].word);
   displayPoint(attainableScoreValue);
+
+// 다음 문제를 위해 문제번호를 1 증가시킴
+  wordSerial++;
+  localStorage.setItem("wordSerial", wordSerial);
+  console.log(wordSerial);
 }
 
 async function loadPronunciation(){
