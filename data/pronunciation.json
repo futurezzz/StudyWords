@@ -1,0 +1,350 @@
+{
+  "items":
+  [
+    {
+      "pronunciation": "æ"
+    },
+    {
+      "pronunciation": "ɑ:"
+    },
+    {
+      "pronunciation": "ɑ:r"
+    },
+    {
+      "pronunciation": "ɑ"
+    },
+    {
+      "pronunciation": "e"
+    },
+    {
+      "pronunciation": "ei"
+    },
+    {
+      "pronunciation": "iei"
+    },
+    {
+      "pronunciation": "eər"
+    },
+    {
+      "pronunciation": "i:"
+    },
+    {
+      "pronunciation": "i"
+    },
+    {
+      "pronunciation": "iə"
+    },
+    {
+      "pronunciation": "i:ə"
+    },
+    {
+      "pronunciation": "ir(iər)"
+    },
+    {
+      "pronunciation": "ou"
+    },
+    {
+      "pronunciation": "ouə"
+    },
+    {
+      "pronunciation": "ɔ:r"
+    },
+    {
+      "pronunciation": "ɔi"
+    },
+    {
+      "pronunciation": "u:"
+    },
+    {
+      "pronunciation": "u"
+    },
+    {
+      "pronunciation": "ju:ə"
+    },
+    {
+      "pronunciation": "u:ə"
+    },
+    {
+      "pronunciation": "juə"
+    },
+    {
+      "pronunciation": "uǝ"
+    },
+    {
+      "pronunciation": "juər"
+    },
+    {
+      "pronunciation": "uǝr"
+    },
+    {
+      "pronunciation": "ʌ"
+    },
+    {
+      "pronunciation": "ǝ"
+    },
+    {
+      "pronunciation": "ǝ:r"
+    },
+    {
+      "pronunciation": "ǝr"
+    },
+    {
+      "pronunciation": "ai"
+    },
+    {
+      "pronunciation": "aiǝ"
+    },
+    {
+      "pronunciation": "aiǝr"
+    },
+    {
+      "pronunciation": "au"
+    },
+    {
+      "pronunciation": "auǝr"
+    },
+    {
+      "pronunciation": "p"
+    },
+    {
+      "pronunciation": "b"
+    },
+    {
+      "pronunciation": "t"
+    },
+    {
+      "pronunciation": "d "
+    },
+    {
+      "pronunciation": "k"
+    },
+    {
+      "pronunciation": "g"
+    },
+    {
+      "pronunciation": "s"
+    },
+    {
+      "pronunciation": "ks"
+    },
+    {
+      "pronunciation": "z"
+    },
+    {
+      "pronunciation": " ʃ"
+    },
+    {
+      "pronunciation": "kʃ"
+    },
+    {
+      "pronunciation": "gz"
+    },
+    {
+      "pronunciation": "gʒ"
+    },
+    {
+      "pronunciation": "ŋKʃ"
+    },
+    {
+      "pronunciation": "ŋz"
+    },
+    {
+      "pronunciation": "ʒ"
+    },
+    {
+      "pronunciation": "dʒ"
+    },
+    {
+      "pronunciation": "tʃ"
+    },
+    {
+      "pronunciation": "f"
+    },
+    {
+      "pronunciation": "v"
+    },
+    {
+      "pronunciation": "wæ"
+    },
+    {
+      "pronunciation": "wɑː"
+    },
+    {
+      "pronunciation": "wa:r"
+    },
+    {
+      "pronunciation": "wɔ:r"
+    },
+    {
+      "pronunciation": "wǝ:r"
+    },
+    {
+      "pronunciation": "wǝr"
+    },
+    {
+      "pronunciation": "wǝ"
+    },
+    {
+      "pronunciation": "wʌ"
+    },
+    {
+      "pronunciation": "wu:"
+    },
+    {
+      "pronunciation": "wu"
+    },
+    {
+      "pronunciation": "wau"
+    },
+    {
+      "pronunciation": "woi"
+    },
+    {
+      "pronunciation": "wou"
+    },
+    {
+      "pronunciation": "wai"
+    },
+    {
+      "pronunciation": "waiǝ"
+    },
+    {
+      "pronunciation": " waiǝr"
+    },
+    {
+      "pronunciation": "weǝr"
+    },
+    {
+      "pronunciation": "wi:"
+    },
+    {
+      "pronunciation": "wi"
+    },
+    {
+      "pronunciation": "we"
+    },
+    {
+      "pronunciation": "wiər"
+    },
+    {
+      "pronunciation": "wei"
+    },
+    {
+      "pronunciation": "jaːr"
+    },
+    {
+      "pronunciation": "je"
+    },
+    {
+      "pronunciation": "jæ"
+    },
+    {
+      "pronunciation": "ju:"
+    },
+    {
+      "pronunciation": "ju"
+    },
+    {
+      "pronunciation": "jou"
+    },
+    {
+      "pronunciation": "jə"
+    },
+    {
+      "pronunciation": "jər"
+    },
+    {
+      "pronunciation": "ji:"
+    },
+    {
+      "pronunciation": "ji"
+    },
+    {
+      "pronunciation": "jʌ"
+    },
+    {
+      "pronunciation": "jɔː"
+    },
+    {
+      "pronunciation": "jiər"
+    },
+    {
+      "pronunciation": "h"
+    },
+    {
+      "pronunciation": "θ"
+    },
+    {
+      "pronunciation": "ð"
+    },
+    {
+      "pronunciation": "m"
+    },
+    {
+      "pronunciation": "n"
+    },
+    {
+      "pronunciation": "ŋ"
+    },
+    {
+      "pronunciation": "ŋg"
+    },
+    {
+      "pronunciation": "ŋk"
+    },
+    {
+      "pronunciation": " l"
+    },
+    {
+      "pronunciation": "əl"
+    },
+    {
+      "pronunciation": "ail"
+    },
+    {
+      "pronunciation": "r"
+    },
+    {
+      "pronunciation": "SILENT B"
+    },
+    {
+      "pronunciation": "SILENT CH"
+    },
+    {
+      "pronunciation": "SILENT D"
+    },
+    {
+      "pronunciation": "SILENT G"
+    },
+    {
+      "pronunciation": "SILENT GH"
+    },
+    {
+      "pronunciation": "SILENT H"
+    },
+    {
+      "pronunciation": "SILENT K"
+    },
+    {
+      "pronunciation": "SILENT L"
+    },
+    {
+      "pronunciation": "SILENT N"
+    },
+    {
+      "pronunciation": "SILENT P"
+    },
+    {
+      "pronunciation": "SILENT PS"
+    },
+    {
+      "pronunciation": "SILENT S"
+    },
+    {
+      "pronunciation": "SILENT T"
+    },
+    {
+      "pronunciation": "SILENT W"
+    }
+  ]
+}

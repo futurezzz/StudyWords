@@ -1,0 +1,277 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+  /* color */
+  --title-color: hsl(209, 68%, 36%);
+  --point-color: hsl(209, 80%, 60%);
+  --level-color: hsl(156, 88%, 27%);
+  --button-color: hsl(185, 34%, 53%);
+  --black-color:hsl(0, 0%, 35%);
+  --white: #fefefe;
+}
+
+
+.container {
+  /* 자식요소를 화면 가운데 배치하기 위해서는
+  부모요소에 width 와 heght가 지정되어 있어야 하며
+  이 때 지정단위가 % 이면 세로 가운데 배치가 안되므로 
+  아래와 같이 vw, vh를 쓰거나 직접 px 등을 입력해야 한다. */
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-unit{
+  /* visibility: hidden; */
+  display: none;
+}
+
+.main-unit-list {
+  width: 150px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.list {
+  list-style: none;
+  flex: 0 0 100px;
+  height: 80px;
+  line-height: 80px;
+  margin: 5px;
+  font-size: 17px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: var(--score-color);
+  color: var(--white);
+  transition: .3s;
+}
+
+.list:hover {
+  background-color: rgb(200, 63, 26);
+  margin-top: -3px;
+}
+
+.word-quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;  
+  text-align: center;
+}
+
+.word-title {
+  width: 100vw;
+  height: 100px;
+  padding-top: 20px;
+  background-color: var(--title-color);
+  color: var(--white);
+  font-size: 25px;
+}
+/* .word-title-up, .word-title-down {
+  height: 30px;
+} */
+.word-level {
+  width: 100vw;
+  margin-top: 5px;
+  height: 60px;
+  line-height: 60px;
+  background-color: var(--level-color);
+  color: var(--white);
+  font-size: 18px;
+}
+
+.word-explanation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 90vw;
+  color: var(--black-color);
+}
+
+
+.word-array-ul, .word-accent-ul {
+  list-style: none;
+  display: flex;
+}
+
+.word-accent {
+  width: 35px;
+  height: 20px;
+  font-size: 13px;
+  color: orangered;
+}
+
+.word-unit {
+  width: 35px;
+  height: 38px;
+  font-size: 22px;
+  line-height: 34px;
+  text-align: center;
+  border: 1px solid var(--black-color);
+  background-color: rgb(255, 255, 190);
+}
+
+.word-unit:hover {
+  /* background-color: rgb(255, 173, 79); */
+  margin-top: -3px;
+  width: 40px;
+  height: 40px;
+}
+
+.word-unit-li {
+  pointer-events: none;
+}
+
+.word-unit-vowel {
+  background-color: rgb(255, 250, 75);
+}
+
+.word-unit-incorrect {
+  background-color: orangered;
+}
+
+/* input 안의 모든 글자는 영문 대문자로 받겠다 */
+input {
+  text-transform: uppercase; 
+}
+
+.word-uppercase {
+  text-transform: uppercase;
+}
+
+.point-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 250px;
+  height: 70px;
+  background-color: rgb(255, 87, 25);
+  border-radius: 150px/42px;
+  color: #333;
+}
+
+.hint-button {
+  width: 50px;
+  font-size: 30px;
+  padding-right: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hint-button:hover {
+  color: rgb(23, 73, 114);
+  font-size: 35px;
+}
+
+.attainable-score {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: var(--white);
+  border-radius: 70px;
+  user-select: none;
+}
+
+.remaining-chance {
+  width: 30px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+  background-color: rgb(238, 197, 228);
+  border-radius: 8px;
+  user-select: none;
+}
+
+.listen-button {
+  visibility: hidden;
+  width: 120px;
+  height: 45px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  /* box-shadow: 3px 3px 2px #ccc; */
+  border-radius: 25px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  padding-top: 8px;
+  cursor: pointer;
+}
+
+.listen-button:hover {
+  background-color: rgb(255, 245, 224);
+}
+
+.next-button {
+  visibility: hidden;
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  margin-bottom: 40px;
+  background-color: #333;
+  color: var(--white);
+  border-radius: 8px;
+  user-select: none;
+  cursor: pointer;
+}
+
+
+
+.point-today, .point-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+  padding-left: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: var(--white);
+  background-color: var(--point-color);
+  user-select: none;
+}
+
+.point-today-value, .point-total-value {
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: 10px;
+  font-size: 18px;
+  background-color: var(--white);
+  color: var(--title-color);
+  border-radius: 5px;
+}
+.point-total {
+  font-size: 20px;
+}
+
+.point-total-value {
+  margin-right: 25px;
+  font-size: 22px;
+}
+
+/* PC에서 볼 때 */
+  @media screen and (min-width: 768px) {
+
+    .word-title, .word-level, .point-today, .point-total {
+      width: 60vw;
+    }
+
+    .word-explanation {
+      max-width: 500px;
+    }
+
+}
