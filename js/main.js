@@ -15,6 +15,8 @@ const pointTotal = document.querySelector('.point-total-value');
 const audioYes = new Audio('audio/yes.mp3');
 const audioNo = new Audio('audio/no.mp3');
 const vowel = 'AEIOU';
+let today = new Intl.DateTimeFormat('kr').format(new Date());
+let lastDay;
 let attainableScoreValue;
 let remainingChanceValue;
 let wordValue;
@@ -100,6 +102,11 @@ listenButton.addEventListener('click', ()=>{
 })
 
 nextButton.addEventListener('click',()=>{
+  // 다음 문제를 위해 문제번호를 1 증가시킴
+  wordSerial++;
+  localStorage.setItem("wordSerial", wordSerial);
+  console.log(wordSerial);
+
   displayButtons();
   displayItems(wordArray)
 })
@@ -113,9 +120,17 @@ function init(){
   // wordSerial = 0;
   wordSerial = parseInt(localStorage.getItem('wordSerial')) || 0;
   // pointTodayValue는 전역정보로 받아온다. 만일 전역정보가 없다면 || (falsy) 기본값 0을 제공한다.
-  pointTodayValue = parseInt(localStorage.getItem('pointTodayValue')) || 0;
-  pointTotalValue = 1500 + pointTodayValue;
-  
+
+  lastDay = localStorage.getItem('lastDay');
+
+  // 마지막으로 저장한 날짜가 오늘날짜이면 오늘의 point점수를 localStorage에서 찾아와서 반영하고 
+  // 그렇지 않으면 오늘의 point는 0점으로 시작하라
+  pointTodayValue = (today === lastDay) ? (parseInt(localStorage.getItem('pointTodayValue')) || 0) : 0;
+
+  //poointTotalValue가 저장되어 있으면 찾아오고, 없다면 0점으로 시작하라
+  pointTotalValue = parseInt(localStorage.getItem('pointTotalValue')) || 0;
+
+
   loadPronunciation();
   loadItems()
   .then(items => {
@@ -140,6 +155,7 @@ function isCorrect(){
     // 정답과 빈칸에 시도한 정답이 같으면 글자를 남겨라.
     if(isAnswer === answer){
       wordLis[matchSerialBefore].value = wordValue;
+      wordLis[matchSerialBefore].classList.add('word-unit-nonselect');
       matchSerialBefore = '';
       blankLength--;
       if(blankLength === 0){
@@ -172,11 +188,6 @@ function afterCorrect(){
   console.log(wordArray[wordSerial].word);
   speech(wordArray[wordSerial].word);
   displayPoint(attainableScoreValue);
-
-// 다음 문제를 위해 문제번호를 1 증가시킴
-  wordSerial++;
-  localStorage.setItem("wordSerial", wordSerial);
-  console.log(wordSerial);
 }
 
 async function loadPronunciation(){
@@ -200,9 +211,12 @@ function displayButtons(){
 }
 
 function displayPoint(point){
+  lastDay = today;
   pointTodayValue = pointTodayValue + point;
   pointTotalValue = pointTotalValue + point;
   localStorage.setItem("pointTodayValue", pointTodayValue);
+  localStorage.setItem("pointTotalValue", pointTotalValue);
+  localStorage.setItem("lastDay", lastDay);
 
   pointToday.textContent = pointTodayValue;
   pointTotal.textContent = pointTotalValue;
@@ -351,3 +365,25 @@ function setVoiceList() {
 
 // style="ime-mode:disabled; text-transform:uppercase;"
 // - 무조건 영문 대문자만 입력되도록 적용
+
+
+//// date관련 최신문법
+// let date = new Date();
+// let a = new Intl.DateTimeFormat('kr').format(date); //kr, en, fr, jp등등
+// let b = new Intl.DateTimeFormat('kr',{dateStyle : 'full', timeStyle: 'full'}).format(date);
+// let c = new Intl.RelativeTimeFormat().format(-10,'hours') //10시간 전 이라고 출력됨
+// console.log(a)
+// console.log(b)
+// console.log(c)
+
+////temporal 곧 출시할 js신기능
+//// import {Temporal} from "@js-temporal/polyfill";
+// let d = Temporal.Now.PlainDateTimeISO(); //현재날짜
+// let e = new Temporal.PlainDate(2022,12,9)
+// d = d.add({days:10, months:3}) //3개월 10일 뒤의 날짜 출력
+// let f = d.round({smallestUnit: 'hour', roundingMond:'floor'}); //시간단위로 반올림
+// let Dday = Temporal.PlainDateTime.from('2022-09-30T12:00:00');
+// let duration = Dday.since(d); //오늘날짜로부터 Dday까지의 기간
+// console.log(d.toString())
+// console.log(duration.days) //기간인 몇일인지
+// console.log(duration.hours) //기간인 몇시간인지
