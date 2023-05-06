@@ -132,6 +132,7 @@
 
 .word-unit-li {
   pointer-events: none;
+  user-select: none;
 }
 
 .word-unit-vowel {
@@ -140,6 +141,11 @@
 
 .word-unit-incorrect {
   background-color: orangered;
+}
+
+.word-unit-nonselect {
+  pointer-events: none;
+  user-select: none;
 }
 
 /* input 안의 모든 글자는 영문 대문자로 받겠다 */
