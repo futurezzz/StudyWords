@@ -1,6 +1,7 @@
 const mainChapter = document.querySelector('.main-unit-list');
 const mainUnit = document.querySelector('.main-unit');
 const wordTitle = document.querySelector('.word-title');
+const wordLevel = document.querySelector('.word-level');
 const wordExplanation = document.querySelector('.word-explanation');
 const wordTitleDown = document.querySelector('.word-title-down');
 const wordAccentUl = document.querySelector('.word-accent-ul');
@@ -229,6 +230,9 @@ function displayPoint(point){
 }
 
 function displayItems(items){
+  if(wordSerial >= 55){
+    wordSerial = 0;
+  }
   let length = items[wordSerial].word.length;
   // 숫자인 blank를 문자열로 바꿔서 배열처럼 하나하나 불러올 예정임
   // blank는 단어중에 빈칸으로 표시할 곳 (숫자로 표기되어 있음)
@@ -238,8 +242,10 @@ function displayItems(items){
   accentLength = accent.length;
   let explanation = items[wordSerial].explanation;
   let pronunciationSerial = items[wordSerial].pronunciation - 1;
-
+  console.log(items[wordSerial].level)
+  
   wordTitleDown.textContent = pronunciationArray[pronunciationSerial].pronunciation;
+  wordLevel.innerHTML = `Level ${items[wordSerial].level} \u00A0\u00A0 ${wordSerial}`
   wordExplanation.textContent = explanation;
   wordAccentUl.innerHTML = ''; //자리 차지하고 있던 li들 모두 제거
   wordArrayUl.innerHTML = ''; //자리 차지하고 있던 li들 모두 제거
