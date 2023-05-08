@@ -82,7 +82,9 @@ hintButton.addEventListener('click', ()=>{
       wordLis[blank[i]-1].value = wordLis[blank[i]-1].textContent;
       attainableScoreValue -= 10;
       attainableScore.textContent = attainableScoreValue;
+      blankLength--;
 
+      // 획득가능점수가 10점이 되면 hint버튼은 사라지고, 음성듣기 버튼이 나타난다.
       if(attainableScoreValue === 10){
         hintButton.style.display = 'none';
         listenButton.style.visibility = 'visible';
@@ -104,6 +106,9 @@ listenButton.addEventListener('click', ()=>{
 nextButton.addEventListener('click',()=>{
   // 다음 문제를 위해 문제번호를 1 증가시킴
   wordSerial++;
+  if(wordSerial === 55){
+    wordSerial = 0;
+  }
   localStorage.setItem("wordSerial", wordSerial);
   console.log(wordSerial);
 
@@ -158,6 +163,7 @@ function isCorrect(){
       wordLis[matchSerialBefore].classList.add('word-unit-nonselect');
       matchSerialBefore = '';
       blankLength--;
+
       if(blankLength === 0){
         afterCorrect();
       }
@@ -280,7 +286,6 @@ function displayItems(items){
 
       wordArrayUl.append(li);
       wordAccentUl.append(liA);
-      console.log(li, liA);
     }
     wordLis = document.querySelectorAll('.word-unit');
 }
