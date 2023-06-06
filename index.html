@@ -13,67 +13,87 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Foldit:wght@300;400&family=Kanit:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=Nunito+Sans:wght@300&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
+
+  <!-- 여기 container는 추후에 게임화면으로 넘어가기 위한 과정임 -->
   <div class="container">
     <div class="main-unit">
       <ul class="main-unit-list">
-        <li class="list" data-chapter="ENG100A" data-unit-no="10">WORD</li>
-        <li class="list" data-chapter="ENG100B" data-unit-no="12">*^^*</li>
+        <!-- <li class="list" data-chapter="ENG100A" data-unit-no="10">LEVEL</li> -->
       </ul>
     </div>
+    <!-- 열문제 맞히고 화면 전환 -->
+    <div class="recess-unit">
+      <img src="img/thumbs-up.png" alt="thumbs up">
+    </div>
 
-    <!-- 메뉴를 누르고 나서 보이는 단어 채우기 화면 -->
-    <div class="word-quiz">
-      <div class="word-title">
-        <div class="word-title-up">pronunciation</div>
-        <div class="word-title-down"></div>
+    
+    <div class="word-visibility">
+      <!-- 메뉴를 누르고 나서 보이는 단어 채우기 화면 -->
+      <div class="word-quiz">
+        <div class="word-head">
+          <div class="home"><img src="img/home.png" alt="home" width="24px" height="24px"></div>
+          <div class="word-level">Level <span class="level"></span><span class="serial">3</span></div>
+          <!-- 오늘의 점수와 누적점수 -->
+          <div class="attainable-point"></div>
+          <div class="point">
+            <div class="point-today-value"></div>
+            <div class="point-total-value"></div>
+          </div>
+        </div>
+
+        <!-- 단어의 뜻을 영어로 설명하는 부분 -->
+        <div class="word-explanation">
+          <div class="word-explanaton-text">to leave completely; give up completelyto leave completely; give up completely</div>
+        </div>
+
+        <!-- 단어 하나하나 박스에 넣고 빈칸도 있고, 모음은 짙은 노란색으로 표시됨 -->
+        <div class="word-array-container">
+          <ul class="word-accent-ul">
+
+            <!-- <li class="word-acent">●</li> -->
+          </ul>
+          <ul class="word-array-ul">
+            <!-- <li class="word-unit">a</li> -->
+          </ul>
+          <ul class="pronunciation-ul">
+            <span>eee</span>
+            <!-- <li class="word-pronunciation"></li> -->
+          </ul>
+        </div>
+        <!-- <input class="word-unit" type="text" style="text-transform: uppercase;"> -->
+
+        <div class="keyboard-container">
+          <ul class="keyboard-ulVowel">
+            <li class="keyboardVowel">A</li>
+            <li class="keyboardVowel">E</li>
+            <li class="keyboardVowel">I</li>
+            <li class="keyboardVowel">O</li>
+            <li class="keyboardVowel">U</li>
+          </ul>
+          <ul class="keyboard-ul">
+          </ul>
+        </div>
+
+
+        <!-- 힌트보기, 발음듣기, 다음문제 -->
+        <div class="sub-container">
+          <!-- 단어의 발음을 듣고 싶을 때 누르는 버튼 -->
+          <div class="listen-button"></div>
+          <div class="hint-button">HINT</div>
+          <!-- 다음 문제 보기버튼 -->
+          <div class="next-button">▶</div>
+        </div>
+
+
       </div>
-      <div class="word-level"></div>
-
-      <!-- 단어의 뜻을 영어로 설명하는 부분 -->
-      <div class="word-explanation">
-        <div class="word-explanaton-text">to leave completely; give up completelyto leave completely; give up completely</div>
-      </div>
-
-      <!-- 단어 하나하나 박스에 넣고 빈칸도 있고, 모음은 짙은 노란색으로 표시됨 -->
-      <div class="word-array-container">
-        <ul class="word-accent-ul">
-          <!-- <li class="word-acent">●</li> -->
-        </ul>
-        <ul class="word-array-ul">
-          <!-- <li class="word-unit">a</li>
-          <input class="word-unit" type="text"> -->
-        </ul>
-      </div>
-      <!-- <input class="word-unit" type="text" style="text-transform: uppercase;"> -->
-
-      <!-- 주황색 타원에 들어가 있는 아이템들. 힌트보기. 획득가능점수. 남은기회 -->
-      <div class="point-container">
-        <div class="hint-button">▼</div>
-        <div class="attainable-score"></div>
-        <div class="remaining-chance"></div>
-      </div>
-
-      <!-- 단어의 발음을 듣고 싶을 때 누르는 버튼 -->
-      <div class="listen-button"><img src="img/speak.png" width="70px" height="25px"> </div>
-      
-      <!-- 다음 문제 보기버튼 -->
-      <div class="next-button">NEXT</div>
-
-      <!-- 오늘의 점수와 누적점수 -->
-      <div class="point-today">your points today<div class="point-today-value"></div></div>
-      <div class="point-total">Your Total Points<div class="point-total-value"></div></div>
 
     </div>
   </div>
   
-  <!-- IMPORTS + CONFIGURATION -->
-  <!-- <script type="module" src="js/firebase.js"></script> -->
-  <!--   <script src="js/includeHTML.js"></script> -->
-  <!-- <script src="js/menu.js"></script> -->
   <script src="js/main.js"></script>
 </body>
 </html>
