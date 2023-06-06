@@ -108,7 +108,8 @@ wordArrayUl.addEventListener('click',(e)=>{
 // 주어진 키보드를 클릭하면
 keyboardConatiner.addEventListener('click',(e)=>{
   // 단어를 다 맞추고 다음문제가 나오기 전까지는 키보드 입력이 불가함
-  if(!blank){
+  // 한 알파벳을 맞추고 다음 커서가 깜빡일 때 까지 다음 입력이 불가함
+  if(!blank || !isAvailable){
     return;
   }
   answer = wordList[blankTurn].dataset.text;
@@ -233,10 +234,7 @@ function yesCorrect(point){
   
   wordList[blankTurn].classList.add('word-blank-correct');
   attainablePoint.classList.add('attainable-point-add');
-  setTimeout(function(){
-    wordList[blankTurn].classList.remove('word-blank-correct');
-    attainablePoint.classList.remove('attainable-point-add');
-  },700)
+  
   
   audioYes.play();
   attainableScoreValue += point;
@@ -244,17 +242,20 @@ function yesCorrect(point){
   // 연속으로 누르는 것을 방지하기 위함
   isAvailable = false;
 
-  if(blankLength === 0){
-    afterCorrect();
-    return;
-  }
-  
   setTimeout(function(){
+    wordList[blankTurn].classList.remove('word-blank-correct');
+    attainablePoint.classList.remove('attainable-point-add');
+
+    if(blankLength === 0){
+      afterCorrect();
+      return;
+    }
+
     blankTurn = parseInt(blank[0])-1;
-    // console.log(blankLength,'blankTurn ',blankTurn);
     focusBlank(blankTurn);
     isAvailable = true;
-  }, 700);
+  },500)
+
 }
 
 
