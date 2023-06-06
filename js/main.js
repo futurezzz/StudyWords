@@ -1,29 +1,41 @@
+const wordVisibility = document.querySelector('.word-visibility');
 const mainChapter = document.querySelector('.main-unit-list');
 const mainUnit = document.querySelector('.main-unit');
+const home = document.querySelector('.home');
+const recessUnit = document.querySelector('.recess-unit');
 const wordTitle = document.querySelector('.word-title');
 const wordLevel = document.querySelector('.word-level');
+const levelBox = document.querySelector('.level');
+const serialBox = document.querySelector('.serial');
+const attainablePoint = document.querySelector('.attainable-point');
 const wordExplanation = document.querySelector('.word-explanation');
-const wordTitleDown = document.querySelector('.word-title-down');
+const pronunciationUl = document.querySelector('.pronunciation-ul');
 const wordAccentUl = document.querySelector('.word-accent-ul');
 const wordArrayUl = document.querySelector('.word-array-ul');
 const hintButton = document.querySelector('.hint-button');
-const attainableScore = document.querySelector('.attainable-score');
-const remainingChance = document.querySelector('.remaining-chance');
 const listenButton = document.querySelector('.listen-button');
 const nextButton = document.querySelector('.next-button');
 const pointToday = document.querySelector('.point-today-value');
 const pointTotal = document.querySelector('.point-total-value');
+const keyboardConatiner = document.querySelector('.keyboard-container');
+const keyboardUl = document.querySelector('.keyboard-ul');
+const audioClear = new Audio('audio/clear.mp3');
 const audioYes = new Audio('audio/yes.mp3');
 const audioNo = new Audio('audio/no.mp3');
 const vowel = 'AEIOU';
+// const consonants = ['B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','W','X','Y','Z'];
+const consonants = 'BCDFGHJKLMNPQRSTVWXYZ'
+let consonantsLis;
 let today = new Intl.DateTimeFormat('kr').format(new Date());
 let lastDay;
+let level;
 let attainableScoreValue;
-let remainingChanceValue;
-let wordValue;
-let wordLis;
+let answer;
+let wordWidth;
+let wordList;
 let blank;
 let blankLength;
+let blankTurn; // 현재 몇번째 공란을 채워야 할 차례인지
 let accent;
 let accentLength;
 let matchSerial;
@@ -31,9 +43,15 @@ let matchSerialBefore;
 let pointTodayValue;
 let pointTotalValue;
 let appendType;
+let serial;
 let wordSerial;
+let wordSerialRandom10 = [];
+let numbers = [];
 let pronunciationArray = [];
 let wordArray = [];
+let levelItems = [];
+let wordLength;
+let isAvailable = true;
 
 
 init();
@@ -41,80 +59,100 @@ init();
 
 //----EVENTS--------------------------------------------------------------
 
-mainUnit.addEventListener('click', (e)=> {
+mainChapter.addEventListener('click', (e)=> {
   let isAvailable = e.target.classList.contains("list");
-
   // 만일 list라는 클래스가 포함되어 있지 않으면(메뉴버튼이 아닌 빈공간 클릭시) return. 즉 문단을 중단하라
   if(!isAvailable){
     return;
   }
 
-  // list 클래스가 포함되어 있을 경우 아래 문단을 실행하라
+  // 누른 레벨버튼에서 숫자만 추출하여 level변수에 넣음
+  level = e.target.textContent.substr(6,1);
   mainUnit.style.visibility = 'hidden';
-})
-// input에 알파벳을 넣고 다른 칸이나 빈회면을 클릭하였을 때 정답을 체크함
-// window.addEventListener('click',(e)=>{
-//   console.log(e.target)
-//   isCorrect();
-// })
-
-wordArrayUl.addEventListener('keyup', (e)=>{
-  // matchSerial은 현재 몇번째 li를 클릭했는지 나타냄.
-  matchSerial = e.target.dataset.serial;
-  // console.log(wordArray[wordSerial].word[matchSerial])
-  // matchSerialBefore에 현재 선택된 li번호를 저장했다가 
-  // 한글이 입력된 경우 focus blur 할 때 영문으로 바꿔줘야 함
-  matchSerialBefore = matchSerial;
-  // wordLis[matchSerial].value = e.code.substr(3,1);
-  wordValue = wordLis[matchSerial].value;
-  console.log(e.key,e.code,e.code.substr(3,1));
-  isCorrect();
+  setTimeout(() => {
+    wordVisibility.style.opacity = 1;
+    // level에 맞는 단어들을 불러옴
+    levelItems = wordArray.filter(word => word.level == level) 
+    
+    makeWordSerialRandom();
+    displayQuiz(wordArray);
+    console.log("레벨 아이템 총:",levelItems.length," 개")
+  }, 1300);
 })
 
-hintButton.addEventListener('click', ()=>{
-  // 획득가능점수가 0점이면 hint 기능을 사용하지 못하고 return된다.
-  if(attainableScoreValue == 0){
+// home 버튼을 누르면 메뉴판이 보인다.
+home.addEventListener('click',()=>{
+  wordVisibility.style.opacity = 0;
+  setTimeout(() => {
+    mainUnit.style.visibility = 'visible';
+    // level에 맞는 단어들을 불러옴
+  }, 700);
+})
+
+
+
+// 맞춰야 할 빈칸을 클릭하면(빈칸에는 word-blank-cursor 클래스속성이 부여되어 있다.)
+wordArrayUl.addEventListener('click',(e)=>{
+  if(!e.target.classList.contains('word-blank-cursor')){
     return;
   }
-  for(let i=0; i<blank.length; i++){
-    // 채워지지 않은 빈칸중에 왼쪽부터 채우는 논리
-    // 일단 hint 버튼으로 하나 채우고 나면 for문을 빠져나온다.
-    if(!wordLis[blank[i]-1].value){
-      wordLis[blank[i]-1].value = wordLis[blank[i]-1].textContent;
-      attainableScoreValue -= 10;
-      attainableScore.textContent = attainableScoreValue;
-      blankLength--;
+  wordList[blankTurn].classList.remove('word-blank-active');
+  e.target.classList.add('word-blank-active');
+  blankTurn = parseInt(e.target.dataset.serial);
+  
+  console.log('blankTurn:',blankTurn,blank);
+})
 
-      // 획득가능점수가 10점이 되면 hint버튼은 사라지고, 음성듣기 버튼이 나타난다.
-      if(attainableScoreValue === 10){
-        hintButton.style.display = 'none';
-        listenButton.style.visibility = 'visible';
-      }
-      // 만일 힌트버튼을 눌러서 단어를 맞추게 되면 afterCorrect 함수를 실행한다.
-      if(i == blank.length-1){
-        afterCorrect();
-      }
 
-      return;
+
+// 주어진 키보드를 클릭하면
+keyboardConatiner.addEventListener('click',(e)=>{
+  // 단어를 다 맞추고 다음문제가 나오기 전까지는 키보드 입력이 불가함
+  if(!blank){
+    return;
+  }
+  answer = wordList[blankTurn].dataset.text;
+  // console.log("blankTurn: ",blankTurn);
+  if(e.target.classList.contains('keyboard')|| e.target.classList.contains('keyboardVowel')){
+    let tryAnswer = e.target.textContent;
+    wordList[blankTurn].textContent = tryAnswer;
+    if(answer === tryAnswer){
+      yesCorrect(10);
+    }
+    else if(answer !== tryAnswer){
+      notCorrect();
     }
   }
 })
 
+
+hintButton.addEventListener('click', ()=>{
+  wordList[blankTurn].textContent = wordList[blankTurn].dataset.text;
+  yesCorrect(-5);
+
+  }
+  
+)
+
 listenButton.addEventListener('click', ()=>{
-  speech(wordArray[wordSerial].word);
+  listenButton.classList.add('listen-button-hover');
+  speech(levelItems[wordSerial].word);
+  setTimeout(() => {
+    listenButton.classList.remove('listen-button-hover');
+  }, 800);
 })
 
 nextButton.addEventListener('click',()=>{
+  //키보드를 연속으로 눌러 틀리는 경우를 막기위한 변수 isAvailable을 다시 활성화
+  isAvailable = true;
   // 다음 문제를 위해 문제번호를 1 증가시킴
-  wordSerial++;
-  if(wordSerial === 55){
-    wordSerial = 0;
-  }
-  localStorage.setItem("wordSerial", wordSerial);
-  console.log(wordSerial);
+  serial++;
+  wordSerial = parseInt(wordSerialRandom10[serial])-1;
+  
+  console.log("wordSerial: ", wordSerial);
 
   displayButtons();
-  displayItems(wordArray)
+  displayQuiz(levelItems)
 })
 
 
@@ -123,78 +161,133 @@ nextButton.addEventListener('click',()=>{
 // functions-------------------------------------------------------------
 
 function init(){
-  // wordSerial = 0;
-  wordSerial = parseInt(localStorage.getItem('wordSerial')) || 0;
-  // pointTodayValue는 전역정보로 받아온다. 만일 전역정보가 없다면 || (falsy) 기본값 0을 제공한다.
-
+  serial = 0;
   lastDay = localStorage.getItem('lastDay');
-
+  
   // 마지막으로 저장한 날짜가 오늘날짜이면 오늘의 point점수를 localStorage에서 찾아와서 반영하고 
   // 그렇지 않으면 오늘의 point는 0점으로 시작하라
+  // pointTodayValue는 전역정보로 받아온다. 만일 전역정보가 없다면 || (falsy) 기본값 0을 제공한다.
   pointTodayValue = (today === lastDay) ? (parseInt(localStorage.getItem('pointTodayValue')) || 0) : 0;
 
   //poointTotalValue가 저장되어 있으면 찾아오고, 없다면 0점으로 시작하라
   pointTotalValue = parseInt(localStorage.getItem('pointTotalValue')) || 0;
 
+  displayLevelButton();
 
   loadPronunciation();
   loadItems()
-  .then(items => {
-    displayItems(items);
-    displayPoint(0);
-  })
-  .catch(console.log);
+  // .then(items => {
+  //   displayItems(items);
+  //   displayKeyboard(items);
+  //   blankTurn = parseInt(blank[0])-1;
+  //   console.log('blankTurn',blankTurn);
+  //   focusBlank(blankTurn);
+  //   displayPoint(0);
+  // })
+  // .catch(console.log);
 }
 
-
-function isCorrect(){
-  if(matchSerialBefore){
-
-    // 이전에 시도했던 빈칸이 비어있으면 계속 점수가 깍이는 것을 방지하기 위한 논리
-    if(wordLis[matchSerialBefore].value == ''){
-      return;
-    }
-
-    let isAnswer = wordValue.toUpperCase(); //input란에 입력한 영문을 대문자로 바꿈
-    let answer = wordArray[wordSerial].word[matchSerialBefore];
-
-    // 정답과 빈칸에 시도한 정답이 같으면 글자를 남겨라.
-    if(isAnswer === answer){
-      wordLis[matchSerialBefore].value = wordValue;
-      wordLis[matchSerialBefore].classList.add('word-unit-nonselect');
-      matchSerialBefore = '';
-      blankLength--;
-
-      if(blankLength === 0){
-        afterCorrect();
-      }
-    } else {
-      notCorrect() //시도한 글자가 정답이 아니면 notCorect를 실행하라.
-    }
-  }
+function displayQuiz(wordArray){
+    displayItems(levelItems);
+    displayKeyboard(levelItems);
+    blankTurn = parseInt(blank[0])-1;
+    console.log('blankTurn',blankTurn);
+    focusBlank(blankTurn);
+    displayPoint(0);
+    displayPronunciationSymbol();
 }
 
 // 정답이 아닐 경우
 function notCorrect(){
+  if(!isAvailable){
+    return;
+  }
   audioNo.play();
-  remainingChanceValue -= 1; 
-  remainingChance.textContent = remainingChanceValue;
   // 0.5초간 시도했던 칸을 주황색으로 바꿨다가 다시 원래 배경색으로 되돌린다.
-  wordLis[matchSerialBefore].classList.add('word-unit-incorrect');
-  wordLis[matchSerialBefore].value = '';
+  wordList[blankTurn].classList.add('word-blank-incorrect');
+  attainablePoint.classList.add('attainable-point-add');
+  
+  attainableScoreValue -= 2;
+  attainablePoint.textContent = attainableScoreValue;
+  
   setTimeout(function(){
-    wordLis[matchSerialBefore].classList.remove('word-unit-incorrect')
+    wordList[blankTurn].classList.remove('word-blank-incorrect')
+    attainablePoint.classList.remove('attainable-point-add');
+    wordList[blankTurn].textContent = '';
+    // 연속으로 누르는 것을 방지하기 위함
+    isAvailable = true;
+
   },500)
+  isAvailable = false;
 }
 
-// 정답을 맞추고 나면
-function afterCorrect(){
+// 정답일 경우
+function yesCorrect(point){
+  if(!isAvailable){
+    return;
+  }
+  wordList[blankTurn].classList.remove('word-blank-active');
+  wordList[blankTurn].classList.remove('word-blank-cursor');
+  blank = blank.replace(blankTurn+1,"");
+  blankLength--;
+  
+  wordList[blankTurn].classList.add('word-blank-correct');
+  attainablePoint.classList.add('attainable-point-add');
+  setTimeout(function(){
+    wordList[blankTurn].classList.remove('word-blank-correct');
+    attainablePoint.classList.remove('attainable-point-add');
+  },700)
+  
   audioYes.play();
-  listenButton.style.visibility = 'visible';
+  attainableScoreValue += point;
+  attainablePoint.textContent = attainableScoreValue;
+  // 연속으로 누르는 것을 방지하기 위함
+  isAvailable = false;
+
+  if(blankLength === 0){
+    afterCorrect();
+    return;
+  }
+  
+  setTimeout(function(){
+    blankTurn = parseInt(blank[0])-1;
+    // console.log(blankLength,'blankTurn ',blankTurn);
+    focusBlank(blankTurn);
+    isAvailable = true;
+  }, 700);
+}
+
+
+// 단어 전체를 맞추고 나면
+function afterCorrect(){
+  // audioClear.play();
+  listenButton.style.display = 'block';
   nextButton.style.visibility = 'visible';
-  console.log(wordArray[wordSerial].word);
-  speech(wordArray[wordSerial].word);
-  displayPoint(attainableScoreValue);
+  // console.log(levelItems[wordSerial].word);
+  speech(levelItems[wordSerial].word);
+  displayAccent();
+  attainablePoint.classList.add('attainable-point-afterCorrect')
+  setTimeout(function(){
+    displayPoint(attainableScoreValue);
+  },1100)
+
+  if(serial === 1){
+    serial = 0;
+    audioClear.play();
+    recessUnit.style.visibility = 'visible';
+    recessUnit.classList.add('thumbsUp');
+    wordVisibility.style.opacity = 0;
+    makeWordSerialRandom();
+    setTimeout(function(){
+      recessUnit.style.visibility = 'hidden';
+      recessUnit.classList.remove('thumbsUp');
+      wordVisibility.style.opacity = 1;
+      displayButtons();
+      displayQuiz(levelItems);
+      isAvailable = true;
+    },1100)
+  }
+  
 }
 
 async function loadPronunciation(){
@@ -214,7 +307,9 @@ async function loadItems(){
 function displayButtons(){
   nextButton.style.visibility = 'hidden';
   hintButton.style.display = 'block';
-  listenButton.style.visibility = 'hidden';
+  listenButton.style.display = 'none';
+  
+  attainablePoint.classList.remove('attainable-point-afterCorrect');
 }
 
 function displayPoint(point){
@@ -229,73 +324,245 @@ function displayPoint(point){
   pointTotal.textContent = pointTotalValue;
 }
 
-function displayItems(items){
-  if(wordSerial >= 55){
-    wordSerial = 0;
+// 알파벳 입력할 칸을 돋보이게 하기(박스 사이즈가 살짝 커짐)
+//blankList는 공백인 칸만 들어있는 배열이다.
+//처음에는 첫번째 공백이 깜박인다. (blankTurn=0, 기본값)
+function focusBlank(blankTurn){
+  wordList[blankTurn].classList.add('word-blank-active');
+}
+
+
+function displayKeyboard(items){
+  let keyboardConsonants = consonants; //자음 초기화
+  //빈칸에 들어가야 할 정답 알파벳이 몇개인지 체크해 두었다가, 키보드에 나머지 채울 알파벳의 갯수를 정하는 데 활용
+  let keyboardArray = [];
+  let tenNumbers = '0123456789';
+  let randomArray = [];
+  // ----------K-E-B-O-A-R-D-----------------------------------------------------
+  // ----- 빈칸을 채우기 위한 랜덤 키보드 생성.
+  // 모음 AEIOU 5개는 이미 생성되어 있음
+  // keyboardArray 라는 배열에 빈칸에 들어갈 단어만 일단 모아넣음
+  for(let j=0; j<blankLength; j++){
+    let blankItem = items[wordSerial].word[blank[j]-1];
+    if(!vowel.includes(blankItem)){
+      // keyboardArray 에 일단 빈칸에 들어가야 할 알파벳을 먼저 넣어 둔다.
+      keyboardArray.push(blankItem);
+      // 중복방지를 위해 자음키보드(consonants)에서 이 빈칸 알파벳은 제외한다.replace ""
+      keyboardConsonants = keyboardConsonants.replace(blankItem,"");
+    };
   }
-  let length = items[wordSerial].word.length;
+  // forNum은 빈칸에 들어가야 할 자음을 제외한 나머지 랜덤자음의 개수
+  let forNum = 10-keyboardArray.length;
+
+  // 자음 랜덤 10개 생성
+  for (let j=0; j<forNum; j++){
+    //consonants에 있는 21개자음 중에 랜덤으로 뽑아라
+    let n = Math.floor(Math.random()*keyboardConsonants.length);
+    keyboardArray.push(keyboardConsonants[n]);
+    // 여기서도 중복방지를 위해 
+    // keyboardArray 에 들어간 알파벳은 replace명령으로 keyboardConsonants 에서 제거한다.
+    keyboardConsonants = keyboardConsonants.replace(keyboardConsonants[n],"");
+  }
+  // console.log(keyboardArray,keyboardArray.length,keyboardConsonants);
+
+  for(let j=0; j<10; j++){
+    let n = Math.floor(Math.random()*tenNumbers.length);
+    randomArray.push(tenNumbers[n]);
+
+    //keyboard용 li 만들기. 
+    li = document.createElement('li')
+    li.textContent = keyboardArray[tenNumbers[n]];
+    li.classList.add('keyboard');
+    keyboardUl.append(li);
+    // 사용한 자리위치 숫자는 tenNumbers에서 제외하여 중복을 방지한다.
+    tenNumbers = tenNumbers.replace(tenNumbers[n],"");
+  }
+}
+
+
+//levelItems에 있는 단어들 중에서 랜덤으로 10개를 뽑아라
+function makeWordSerialRandom(){
+  // levelItems의 갯수만큼 숫자배열을 만든다.
+  wordSerialRandom10.length = 0; //random배열 초기화
+  numbers.length = 0;
+  numbers = Array(levelItems.length).fill().map((v,i)=>i+1);
+  for(let i=0; i<10; i++){
+    let n = Math.floor(Math.random()*numbers.length);
+    // numbers에서 랜덤으로 뽑은 숫자를 꺼내어
+    let poped = numbers.splice(n,1);
+    // wordSerialRandom10에 그 숫자를 넣는다
+    wordSerialRandom10.push(...poped);
+  }
+  console.log(numbers,"random",wordSerialRandom10);
+}
+
+// 단어 출력하기(공백도 함께)
+function displayItems(items){
+  wordSerial = parseInt(wordSerialRandom10[serial])-1;
+  // wordSerial = 9;
+  wordLength = items[wordSerial].word.length;
+  wordWidth = wordLength < 10 ? 35 : 28;
+  // console.log(items[wordSerial]);
   // 숫자인 blank를 문자열로 바꿔서 배열처럼 하나하나 불러올 예정임
   // blank는 단어중에 빈칸으로 표시할 곳 (숫자로 표기되어 있음)
   blank = items[wordSerial].blank.toString(); 
   blankLength = blank.length;
-  accent = items[wordSerial].accent.toString(); 
-  accentLength = accent.length;
-  let explanation = items[wordSerial].explanation;
+
+  let explanation = items[wordSerial].뜻영문;
   let pronunciationSerial = items[wordSerial].pronunciation - 1;
-  console.log(items[wordSerial].level)
   
-  wordTitleDown.textContent = pronunciationArray[pronunciationSerial].pronunciation;
-  wordLevel.innerHTML = `Level ${items[wordSerial].level} \u00A0\u00A0 ${wordSerial}`
+  attainableScoreValue = 10;
+  attainablePoint.textContent = attainableScoreValue;
+  // wordLevel.innerHTML = `Level ${items[wordSerial].level} \u00A0\u00A0 ${serial+1}`
+  levelBox.textContent = level;
+  serialBox.textContent = serial+1;
   wordExplanation.textContent = explanation;
   wordAccentUl.innerHTML = ''; //자리 차지하고 있던 li들 모두 제거
   wordArrayUl.innerHTML = ''; //자리 차지하고 있던 li들 모두 제거
+  keyboardUl.innerHTML = ''; //자음키보드도 초기화
+  pronunciationUl.innerHTML = ''; //발음기호 초기화
 
-  // 획득가능점수 입력. (blank가 3개면 40점, 4개면 50점, 5개면 60점)
-  attainableScoreValue = (blank.length + 1)*10;
-  attainableScore.textContent = attainableScoreValue;
 
-  // 남은 도전횟수. 획득가능점수/5로 환산한다.
-  remainingChanceValue = attainableScoreValue / 5;
-  remainingChance.textContent = remainingChanceValue;
-
-  for(let i=0 ; i<length; i++){
-    // i가 blank필드 자릿수에 해당하면 그곳은 빈칸(input type)으로 만들어 사용자가 입력하게 함
+  for(let i=0 ; i<wordLength; i++){
+      li = document.createElement('li');
+      let wordItem = items[wordSerial].word[i];
+    // i가 blank필드 자릿수에 해당하면 그곳은 빈칸으로 만들어 사용자가 입력하게 함
     if( blank.includes(i+1) ){
-      appendType = 'input'
+      //공백으로 남겨두는 대신에 정답확일을 위해 dataset에 단어를 저장한다.
+      li.dataset.text = wordItem;
+      li.classList.add('word-blank-cursor');
     }
     else{
-      appendType = 'li'
+      li.textContent = wordItem; //json data에 담겨있는 단어글자를 li에 표시
     }
-    
-    
-      li = document.createElement(appendType)
-      li.textContent = items[wordSerial].word[i]; //json data에 담겨있는 단어글자를 li에 표시
       li.classList.add('word-unit');
+
+      // 단어길이가 10글자 이상이면 단어 칸의 길이를 35px에서 28px 로 줄여서 화면에 채움
+      if(wordLength >= 10){
+        li.style.width = '28px';
+      }
       li.dataset.serial = i;
-      
-      // accent용 li 만들기. word-accent-ul에 들어갈 요소들
-      liA = document.createElement('li')
-      liA.textContent = accent.includes(i+1) ? '●' : '';
-      // li2.textContent = items[wordSerial].word[i]; //json data에 담겨있는 단어글자를 li에 표시
-      liA.classList.add('word-accent');
 
-
-      // 만일 li에 입력될 글자가 모음(vowel)이면 바탕색을 진노랑으로(word-unit-vowel)을 추가하라
-      if(vowel.includes(li.textContent)){
+      // 만일 li에 입력될 글자가 모음(vowel)이면 바탕색을 카키색으로(word-unit-vowel)을 추가하라
+      if(vowel.includes(wordItem)){
         li.classList.add('word-unit-vowel')
       } 
 
-      // 만일 li타입이 빈칸(input)이 아니라 주어진 글자라면 선택되지 못하게(pointer-events:none)을 추가하라
-      if(appendType == 'li'){
-        li.classList.add('word-unit-li')
-      }
-
       wordArrayUl.append(li);
-      wordAccentUl.append(liA);
     }
-    wordLis = document.querySelectorAll('.word-unit');
+    wordList = document.querySelectorAll('.word-unit');
 }
 
+
+// 강세표시-----------------------------------
+function displayAccent(){
+  accent = levelItems[wordSerial].accent.toString(); 
+  accentLength = accent.length;
+  if(accent == 0){
+    return;
+  }
+  liA = document.createElement('li');
+  liA.classList.add('word-accent');
+  
+  // 단어길이가 10글자 이상이면 단어 칸의 길이를 35px에서 28px 로 줄여서 화면에 채움
+  if(wordLength >= 10){
+    liA.style.width = '28px';
+  }
+  // accent가 한글자일 경우도 있지만 2~3글자일 경우 엑센트 그림이 위치할 크기가 2~3배로 커져야 한다.
+  let width = accent.length * wordWidth;
+  // accent가 표시될 위치는 첫번째 accent가 표시되는 지점까지 marginLeft로 공간이동을 해줘야 한다.
+  let marginLeft = (accent[0]-1)*wordWidth;
+  liA.style.width = `${width}px`;
+  liA.style.marginLeft = `${marginLeft}px`;
+  wordAccentUl.append(liA);
+}
+
+
+// 발음기호 표시-----------------------------------
+function displayPronunciationSymbol(){
+  let pronunciationSymbolIndex = parseInt(levelItems[wordSerial].pronunciation.toString())-1; 
+  let pronunciationSpot = levelItems[wordSerial].발음위치; 
+  let pronunciationSpotArray = levelItems[wordSerial].발음위치.split(',');
+  let arrayLength = pronunciationSpotArray.length;
+  let symbol = pronunciationArray[pronunciationSymbolIndex].pronunciation;
+
+  liP = document.createElement('li');
+  liP.classList.add('word-pronunciation');
+  // 발음기호 표시할 위치가 하나인 경우(99%가 이 경우임)
+  if(arrayLength === 1) {
+    
+  // 단어길이가 10글자 이상이면 단어 칸의 길이를 35px에서 28px 로 줄여서 화면에 채움
+  if(wordLength >= 10){
+    liP.style.width = '28px';
+  }
+    // 발음기호가 한글자에 위치할 경우도 있지만 2~3글자일 경우 그 사이에 배치하기 위해 크기가 2~3배로 커져야 한다.
+    let width = pronunciationSpot.length * wordWidth;
+    // accent가 표시될 위치는 첫번째 accent가 표시되는 지점까지 marginLeft로 공간이동을 해줘야 한다.
+    let marginLeft = (pronunciationSpot[0]-1)*wordWidth;
+    console.log('pronunciation length:',pronunciationSpot.length, pronunciationSpot)
+    liP.style.width = `${width}px`;
+    liP.style.marginLeft = `${marginLeft}px`;
+
+  // symbol이 'SILENT'를 포함하고 있으면 SILENT를 제외한 뒤의 글자만 사용한다.
+  // symbol = !symbol.includes('SILENT') ? symbol : symbol.replace('SILENT ',"");
+    if(symbol.includes('SILENT')){
+      symbol = symbol.replace('SILENT ',"");
+      liS = document.createElement('li');
+      liS.classList.add('pronuciationSilent');
+      liS.style.width = `${width-4}px`;
+      liS.style.height = `${width-4}px`;
+      liS.style.marginLeft = `${marginLeft+2}px`;
+      pronunciationUl.append(liS);
+    }
+
+    liP.textContent = symbol;
+    pronunciationUl.append(liP);
+  }
+  // 표시위치가 2개 이상인 경우
+  else if(arrayLength > 1) {
+    console.log(pronunciationSpotArray);
+    for(let i=0; i<arrayLength; i++){
+      // 발음기호가 한글자에 위치할 경우도 있지만 2~3글자일 경우 그 사이에 배치하기 위해 크기가 2~3배로 커져야 한다.
+      let width = pronunciationSpotArray[i].length * 35;
+      // accent가 표시될 위치는 첫번째 accent가 표시되는 지점까지 marginLeft로 공간이동을 해줘야 한다.
+      let marginLeft = (pronunciationSpotArray[i][0]-1)*35+5;
+      console.log(pronunciationSpotArray[i][0])
+      liP.style.width = `${width}px`;
+      liP.style.marginLeft = `${marginLeft}px`;
+
+      
+  // symbol이 'SILENT'를 포함하고 있으면 SILENT를 제외한 뒤의 글자만 사용한다.
+  // symbol = !symbol.includes('SILENT') ? symbol : symbol.replace('SILENT ',"");
+    if(symbol.includes('SILENT')){
+      symbol = symbol.replace('SILENT ',"");
+      liS = document.createElement('li');
+      liS.classList.add('pronuciationSilent');
+      liS.style.width = `${width-4}px`;
+      liS.style.height = `${width-4}px`;
+      liS.style.marginLeft = `${marginLeft+2}px`;
+      pronunciationUl.append(liS);
+    }
+
+      liP.textContent = symbol;
+      pronunciationUl.append(liP);
+    }
+  }
+  console.log('발음',pronunciationSpotArray.length)
+  
+  // pronunciationUl.textContent = pronunciationArray[pronunciation].pronunciation;
+  
+  
+}
+
+// 웹 실행시 최초 출현하는 LEVEL 리스트
+function displayLevelButton(){
+  for(let i=1; i<9; i++){
+    let li = document.createElement('li');
+    li.innerHTML = `LEVEL ${i}`;
+    li.classList.add('list');
+    mainChapter.append(li);
+  }
+}
 
 // ------------------------- 음성합성 --------------------------------------//
 
