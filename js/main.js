@@ -271,7 +271,8 @@ function afterCorrect(){
     displayPoint(attainableScoreValue);
   },1100)
 
-  if(serial === 1){
+  // 10문제를 맞히고 나면 thumbsup 아이콘이 나타났다가 화면을 지우고 다시 시작함
+  if(serial === 9){
     serial = 0;
     audioClear.play();
     recessUnit.style.visibility = 'visible';
