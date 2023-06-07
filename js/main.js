@@ -490,7 +490,7 @@ function displayPronunciationSymbol(){
   let pronunciationSpotArray = levelItems[wordSerial].발음위치.split('|');
   let arrayLength = pronunciationSpotArray.length;
   let symbol = pronunciationArray[pronunciationSymbolIndex].pronunciation;
-console.log(pronunciationSpotArray)
+  let symbolText = symbol;
   
   // 표시위치가 2개 이상인 경우
   // else if(arrayLength > 1) {
@@ -502,14 +502,13 @@ console.log(pronunciationSpotArray)
       let width = pronunciationSpot.length * wordWidth;
       // accent가 표시될 위치는 첫번째 accent가 표시되는 지점까지 marginLeft로 공간이동을 해줘야 한다.
       let marginLeft = (pronunciationSpot[0]-1)*wordWidth;
-      console.log(pronunciationSpot[0],marginLeft)
       liP.style.width = `${width}px`;
       liP.style.marginLeft = `${marginLeft}px`;
 
       
   // symbol이 'SILENT'를 포함하고 있으면 SILENT를 제외한 뒤의 글자만 사용한다.
   // symbol = !symbol.includes('SILENT') ? symbol : symbol.replace('SILENT ',"");
-  let symbolText;
+  
   if(symbol.includes('SILENT')){
     symbolText = symbol.replace('SILENT ',"");
     let liS = document.createElement('li');
@@ -517,6 +516,7 @@ console.log(pronunciationSpotArray)
     let widthS = (pronunciationSpot.length === 1) ? 26 : 28+(symbolText.length*3);
     liS.style.width = `${widthS}px`;
     liS.style.height = `${widthS}px`;
+    liS.style.marginTop = '2px';
     let extraMargin = (pronunciationSpot.length == symbolText.length) ? 5 : 2+wordWidth*(pronunciationSpot.length - symbolText.length)/2;
     liS.style.marginLeft = `${marginLeft+extraMargin}px`;
     console.log(pronunciationSpot.length, symbolText.length, marginLeft, extraMargin, widthS)
@@ -527,7 +527,7 @@ console.log(pronunciationSpotArray)
 
     // }
   }
-  console.log('발음',pronunciationSpotArray.length)
+  console.log('발음',pronunciationSpotArray.length,symbolText)
   
   // pronunciationUl.textContent = pronunciationArray[pronunciation].pronunciation;
   
