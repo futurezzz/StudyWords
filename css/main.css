@@ -275,6 +275,7 @@ body {
 
 /* 묵음 발음기호 */
 .pronuciationSilent {
+  position: absolute;
   /* width: 35px;
   height: 35px; */
   background-image: url(../img/silent.png);
