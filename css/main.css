@@ -131,6 +131,7 @@ body {
   height: 80px;
   padding-top: 30px;
   margin-bottom: 20px;
+  padding-left: 10px;
   background-color: var(--dark-blue-color);
   justify-content: space-between;
   color: var(--white);
@@ -139,9 +140,9 @@ body {
 }
 
 .home {
-  position: fixed;
-  left: 20px;
-  top: 12px;
+  position: relative;
+  left: 10px;
+  top: -15px;
   /* 연하늘색 */
   filter: invert(93%) sepia(5%) saturate(500%) hue-rotate(160deg) brightness(100%) contrast(77%);
   cursor: pointer;
@@ -152,13 +153,15 @@ body {
 }
 
 .word-level, .level {
+  position: relative;
   width: 100px;
-  margin-top: 12px;
+  margin-top: 15px;
+  margin-left: 3px;
   font-size: 18px;
 }
 
 .word-level {
-  margin-left: 15px;
+  margin-left: -65px;
 }
 
 .serial {
@@ -462,4 +465,7 @@ body {
       max-width: 500px;
     }
 
+    .word-level {
+      margin-left: -100px;
+    }
 }
