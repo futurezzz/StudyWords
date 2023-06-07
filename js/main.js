@@ -73,7 +73,7 @@ mainChapter.addEventListener('click', (e)=> {
     wordVisibility.style.opacity = 1;
     // level에 맞는 단어들을 불러옴
     levelItems = wordArray.filter(word => word.level == level) 
-    
+console.log(levelItems);
     makeWordSerialRandom();
     displayQuiz(wordArray);
     console.log("레벨 아이템 총:",levelItems.length," 개")
@@ -229,7 +229,9 @@ function yesCorrect(point){
   }
   wordList[blankTurn].classList.remove('word-blank-active');
   wordList[blankTurn].classList.remove('word-blank-cursor');
-  blank = blank.replace(blankTurn+1,"");
+  blank = blank.filter(e=>e!==(blankTurn+1).toString());
+  console.log(blank, blankTurn)
+  // blank = blank.replace(blankTurn+1,"");
   blankLength--;
   
   wordList[blankTurn].classList.add('word-blank-correct');
@@ -395,19 +397,20 @@ function makeWordSerialRandom(){
     // wordSerialRandom10에 그 숫자를 넣는다
     wordSerialRandom10.push(...poped);
   }
-  console.log(numbers,"random",wordSerialRandom10);
+  console.log("random",wordSerialRandom10);
 }
 
 // 단어 출력하기(공백도 함께)
 function displayItems(items){
   wordSerial = parseInt(wordSerialRandom10[serial])-1;
-  // wordSerial = 9;
+  // wordSerial = 33;
   wordLength = items[wordSerial].word.length;
   wordWidth = wordLength < 10 ? 35 : 28;
   // console.log(items[wordSerial]);
   // 숫자인 blank를 문자열로 바꿔서 배열처럼 하나하나 불러올 예정임
   // blank는 단어중에 빈칸으로 표시할 곳 (숫자로 표기되어 있음)
-  blank = items[wordSerial].blank.toString(); 
+  // blank = items[wordSerial].blank.toString(); 
+  blank = items[wordSerial].blank.split(","); 
   blankLength = blank.length;
 
   let explanation = items[wordSerial].뜻영문;
@@ -429,8 +432,8 @@ function displayItems(items){
       li = document.createElement('li');
       let wordItem = items[wordSerial].word[i];
     // i가 blank필드 자릿수에 해당하면 그곳은 빈칸으로 만들어 사용자가 입력하게 함
-    if( blank.includes(i+1) ){
-      //공백으로 남겨두는 대신에 정답확일을 위해 dataset에 단어를 저장한다.
+    if( blank.includes((i+1).toString())){
+      //공백으로 남겨두는 대신에 정답확인을 위해 dataset에 단어를 저장한다.
       li.dataset.text = wordItem;
       li.classList.add('word-blank-cursor');
     }
@@ -483,71 +486,46 @@ function displayAccent(){
 // 발음기호 표시-----------------------------------
 function displayPronunciationSymbol(){
   let pronunciationSymbolIndex = parseInt(levelItems[wordSerial].pronunciation.toString())-1; 
-  let pronunciationSpot = levelItems[wordSerial].발음위치; 
-  let pronunciationSpotArray = levelItems[wordSerial].발음위치.split(',');
+  // let pronunciationSpot = levelItems[wordSerial].발음위치; 
+  let pronunciationSpotArray = levelItems[wordSerial].발음위치.split('|');
   let arrayLength = pronunciationSpotArray.length;
   let symbol = pronunciationArray[pronunciationSymbolIndex].pronunciation;
-
-  liP = document.createElement('li');
-  liP.classList.add('word-pronunciation');
-  // 발음기호 표시할 위치가 하나인 경우(99%가 이 경우임)
-  if(arrayLength === 1) {
-    
-  // 단어길이가 10글자 이상이면 단어 칸의 길이를 35px에서 28px 로 줄여서 화면에 채움
-  if(wordLength >= 10){
-    liP.style.width = '28px';
-  }
-    // 발음기호가 한글자에 위치할 경우도 있지만 2~3글자일 경우 그 사이에 배치하기 위해 크기가 2~3배로 커져야 한다.
-    let width = pronunciationSpot.length * wordWidth;
-    // accent가 표시될 위치는 첫번째 accent가 표시되는 지점까지 marginLeft로 공간이동을 해줘야 한다.
-    let marginLeft = (pronunciationSpot[0]-1)*wordWidth;
-    console.log('pronunciation length:',pronunciationSpot.length, pronunciationSpot)
-    liP.style.width = `${width}px`;
-    liP.style.marginLeft = `${marginLeft}px`;
-
-  // symbol이 'SILENT'를 포함하고 있으면 SILENT를 제외한 뒤의 글자만 사용한다.
-  // symbol = !symbol.includes('SILENT') ? symbol : symbol.replace('SILENT ',"");
-    if(symbol.includes('SILENT')){
-      symbol = symbol.replace('SILENT ',"");
-      liS = document.createElement('li');
-      liS.classList.add('pronuciationSilent');
-      liS.style.width = `${width-4}px`;
-      liS.style.height = `${width-4}px`;
-      liS.style.marginLeft = `${marginLeft+2}px`;
-      pronunciationUl.append(liS);
-    }
-
-    liP.textContent = symbol;
-    pronunciationUl.append(liP);
-  }
+console.log(pronunciationSpotArray)
+  
   // 표시위치가 2개 이상인 경우
-  else if(arrayLength > 1) {
-    console.log(pronunciationSpotArray);
+  // else if(arrayLength > 1) {
     for(let i=0; i<arrayLength; i++){
+      let liP = document.createElement('li');
+      liP.classList.add('word-pronunciation');
+      let pronunciationSpot = pronunciationSpotArray[i].split(",")
       // 발음기호가 한글자에 위치할 경우도 있지만 2~3글자일 경우 그 사이에 배치하기 위해 크기가 2~3배로 커져야 한다.
-      let width = pronunciationSpotArray[i].length * 35;
+      let width = pronunciationSpot.length * wordWidth;
       // accent가 표시될 위치는 첫번째 accent가 표시되는 지점까지 marginLeft로 공간이동을 해줘야 한다.
-      let marginLeft = (pronunciationSpotArray[i][0]-1)*35+5;
-      console.log(pronunciationSpotArray[i][0])
+      let marginLeft = (pronunciationSpot[0]-1)*wordWidth;
+      console.log(pronunciationSpot[0],marginLeft)
       liP.style.width = `${width}px`;
       liP.style.marginLeft = `${marginLeft}px`;
 
       
   // symbol이 'SILENT'를 포함하고 있으면 SILENT를 제외한 뒤의 글자만 사용한다.
   // symbol = !symbol.includes('SILENT') ? symbol : symbol.replace('SILENT ',"");
-    if(symbol.includes('SILENT')){
-      symbol = symbol.replace('SILENT ',"");
-      liS = document.createElement('li');
-      liS.classList.add('pronuciationSilent');
-      liS.style.width = `${width-4}px`;
-      liS.style.height = `${width-4}px`;
-      liS.style.marginLeft = `${marginLeft+2}px`;
-      pronunciationUl.append(liS);
-    }
+  let symbolText;
+  if(symbol.includes('SILENT')){
+    symbolText = symbol.replace('SILENT ',"");
+    let liS = document.createElement('li');
+    liS.classList.add('pronuciationSilent');
+    let widthS = (pronunciationSpot.length === 1) ? 26 : 28+(symbolText.length*3);
+    liS.style.width = `${widthS}px`;
+    liS.style.height = `${widthS}px`;
+    let extraMargin = (pronunciationSpot.length == symbolText.length) ? 5 : 2+wordWidth*(pronunciationSpot.length - symbolText.length)/2;
+    liS.style.marginLeft = `${marginLeft+extraMargin}px`;
+    console.log(pronunciationSpot.length, symbolText.length, marginLeft, extraMargin, widthS)
+    pronunciationUl.append(liS);
+  }
+  liP.textContent = symbolText;
+  pronunciationUl.append(liP);
 
-      liP.textContent = symbol;
-      pronunciationUl.append(liP);
-    }
+    // }
   }
   console.log('발음',pronunciationSpotArray.length)
   
