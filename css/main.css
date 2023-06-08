@@ -140,9 +140,9 @@ body {
 }
 
 .home {
-  position: relative;
-  left: 10px;
-  top: -15px;
+  width: 170px;
+  margin-top: -15px;
+  margin-left: -65px;
   /* 연하늘색 */
   filter: invert(93%) sepia(5%) saturate(500%) hue-rotate(160deg) brightness(100%) contrast(77%);
   cursor: pointer;
@@ -153,16 +153,11 @@ body {
 }
 
 .word-level, .level {
-  position: relative;
   width: 100px;
-  margin-top: 15px;
   margin-left: 3px;
   font-size: 18px;
 }
 
-.word-level {
-  margin-left: -65px;
-}
 
 .serial {
   padding-left: 17px;
@@ -465,7 +460,4 @@ body {
       max-width: 500px;
     }
 
-    .word-level {
-      margin-left: -100px;
-    }
 }
