@@ -88,7 +88,7 @@
       "발음위치": "1",
       "accent": 3,
       "blank": "3,4,6",
-      "뜻영문": "the?physical?or?mental?power?to do something; capability",
+      "뜻영문": "the physical or mental power to do something; capability",
       "뜻한국": "해낼 수 있는 능력"
     },
     {
@@ -128,7 +128,7 @@
       "발음위치": "4,5",
       "accent": 4,
       "blank": "2,4,6",
-      "뜻영문": "different from what is?usual?or?average",
+      "뜻영문": "different from what is usual or average",
       "뜻한국": "일반적이지 않은, 비정상적인"
     },
     {
@@ -139,7 +139,7 @@
       "accent": 34,
       "blank": "4,5",
       "뜻영문": "on a ship, airplane, bus, or train",
-      "뜻한국": "배?비행기?열차?버스 같은 탈것에 올라 탄"
+      "뜻한국": "배 비행기 열차 버스 같은 탈것에 올라 탄"
     },
     {
       "word": "ABODE",
@@ -249,7 +249,7 @@
       "accent": 4,
       "blank": "2,4,6",
       "뜻영문": "to shorten by omitting unimportant parts; diminish; lessen; curtail",
-      "뜻한국": "핵심만 남기고 축소하다, 권리?권한을 줄이다"
+      "뜻한국": "핵심만 남기고 축소하다, 권리 권한을 줄이다"
     },
     {
       "word": "ABROAD",
@@ -318,7 +318,7 @@
       "발음위치": "3",
       "accent": 4,
       "blank": "4,5",
-      "뜻영문": "to?free?someone from?guilt or responsibility; give forgiveness to someone ",
+      "뜻영문": "to free someone from guilt or responsibility; give forgiveness to someone ",
       "뜻한국": "죄를 씻어 주다, 책임을 없애 주다"
     },
     {
@@ -588,7 +588,7 @@
       "발음위치": "4,5",
       "accent": 45,
       "blank": "3,4",
-      "뜻영문": "a statement of financial transactions / a?verbal?or written?description / importance",
+      "뜻영문": "a statement of financial transactions / a verbal or written description / importance",
       "뜻한국": "은행 계좌, 계정, 설명[묘사], 중요성"
     },
     {
@@ -598,7 +598,7 @@
       "발음위치": "4,5",
       "accent": 45,
       "blank": "3,4,7,8",
-      "뜻영문": "responsible?for what you do and?able?to give a?satisfactory?reason?for it; responsible",
+      "뜻영문": "responsible for what you do and able to give a satisfactory reason for it; responsible",
       "뜻한국": "책임을 지고 결정 등에 대해 설명해야 하는"
     },
     {
@@ -619,7 +619,7 @@
       "accent": 56,
       "blank": "4,5",
       "뜻영문": "to gradually accumulate or to keep growing in value or size over a period of time",
-      "뜻한국": "시간이 지나면서 이자?배당 등이 증식하다"
+      "뜻한국": "시간이 지나면서 이자 배당 등이 증식하다"
     },
     {
       "word": "ACCUMULATE",
@@ -628,7 +628,7 @@
       "발음위치": "4",
       "accent": 4,
       "blank": "4,5,7,8",
-      "뜻영문": "to?gather or acquire?a?large?number?of things over a?long?period?of?time; heap up",
+      "뜻영문": "to gather or acquire a large number of things over a long period of time; heap up",
       "뜻한국": "축적하다, 모으다"
     },
     {
@@ -638,7 +638,7 @@
       "발음위치": "6",
       "accent": 1,
       "blank": "3,6,7",
-      "뜻영문": "the?state?of being?correct?and without any?mistakes; precision; correctness",
+      "뜻영문": "the state of being correct and without any mistakes; precision; correctness",
       "뜻한국": "오차[실수]가 없는 정확함"
     },
     {
@@ -648,7 +648,7 @@
       "발음위치": "6",
       "accent": 1,
       "blank": "3,6,7",
-      "뜻영문": "being?correct?and without any?mistake; precise; exact",
+      "뜻영문": "being correct and without any mistake; precise; exact",
       "뜻한국": "오차[실수]가 없이 정확한"
     },
     {
@@ -678,7 +678,7 @@
       "발음위치": "2,3,4",
       "accent": 0,
       "blank": "3,4",
-      "뜻영문": "a continuous pain that is not sharp?/ to produce a dull continuous pain",
+      "뜻영문": "a continuous pain that is not sharp / to produce a dull continuous pain",
       "뜻한국": "약하게 지속되는 통증, 계속 쑤시다[아프다]"
     },
     {
@@ -698,7 +698,7 @@
       "발음위치": "4,5",
       "accent": 45,
       "blank": "2,4",
-      "뜻영문": "used to?imitate?the sound of a sneeze",
+      "뜻영문": "used to imitate the sound of a sneeze",
       "뜻한국": "재채기할 때 내는 ‘에취’ 소리"
     },
     {
@@ -718,7 +718,7 @@
       "발음위치": "2,3",
       "accent": 5,
       "blank": "2,5,8,9",
-      "뜻영문": "to?recognize?or?admit?the?reality, truth, or existence of",
+      "뜻영문": "to recognize or admit the reality, truth, or existence of",
       "뜻한국": "인정하다, 받아들이다"
     },
     {
@@ -728,7 +728,7 @@
       "발음위치": "4",
       "accent": 1,
       "blank": "3,4",
-      "뜻영문": "the highest point;?apex; summit;?zenith",
+      "뜻영문": "the highest point; apex; summit; zenith",
       "뜻한국": "가장 높은 수준, 절정, 정점 "
     },
     {
@@ -738,7 +738,7 @@
       "발음위치": "4",
       "accent": 1,
       "blank": "3,4",
-      "뜻영문": "a skin condition which causes a?lot?of?small, red spots?on the face and neck",
+      "뜻영문": "a skin condition which causes a lot of small, red spots on the face and neck",
       "뜻한국": "여드름 "
     },
     {
@@ -748,7 +748,7 @@
       "발음위치": "1",
       "accent": 1,
       "blank": "3,4",
-      "뜻영문": "a?oval?nut that is the fruit of an oak tree",
+      "뜻영문": "a oval nut that is the fruit of an oak tree",
       "뜻한국": "도토리"
     },
     {
@@ -758,7 +758,7 @@
       "발음위치": "4,5",
       "accent": 4,
       "blank": "3,4",
-      "뜻영문": "?to make fear, doubt, or anger less severe or strong; clam; alleviate; mitigate",
+      "뜻영문": " to make fear, doubt, or anger less severe or strong; clam; alleviate; mitigate",
       "뜻한국": "두려움 및 분노 등의 감정을 누그러뜨리다"
     },
     {
@@ -828,7 +828,7 @@
       "발음위치": "3",
       "accent": 3,
       "blank": "3,4,6",
-      "뜻영문": "something that is?unusual?or?seem?strange",
+      "뜻영문": "something that is unusual or seem strange",
       "뜻한국": "이상한 것, 예상되지 못한 것, 기형, 변칙"
     },
     {
@@ -848,7 +848,7 @@
       "발음위치": "1",
       "accent": 0,
       "blank": "2,3",
-      "뜻영문": "a small?insect?living?in?well-organized?social?groups",
+      "뜻영문": "a small insect living in well-organized social groups",
       "뜻한국": "개미"
     },
     {
@@ -868,7 +868,7 @@
       "발음위치": "1",
       "accent": 1,
       "blank": "3,4",
-      "뜻영문": "a playful or ludicrous act done for fun?",
+      "뜻영문": "a playful or ludicrous act done for fun ",
       "뜻한국": "장난끼가 가득하고 우스꽝스러운 행동"
     },
     {
@@ -878,7 +878,7 @@
       "발음위치": "3|5",
       "accent": 1,
       "blank": "3,4",
-      "뜻영문": "strong dislike or enmity;?animosity",
+      "뜻영문": "strong dislike or enmity; animosity",
       "뜻한국": "강한 혐오 및 적대감"
     },
     {
@@ -928,7 +928,7 @@
       "발음위치": "1",
       "accent": 0,
       "blank": "2,3",
-      "뜻영문": "to put a?question?to someone / to request something",
+      "뜻영문": "to put a question to someone / to request something",
       "뜻한국": "묻다[물어보다], 요청하다"
     },
     {
@@ -948,7 +948,7 @@
       "발음위치": "4,5",
       "accent": 45,
       "blank": "3,4,6",
-      "뜻영문": "to violently attack; assail?/ a violent attack",
+      "뜻영문": "to violently attack; assail / a violent attack",
       "뜻한국": "맹렬하게 공격하다, 공격(하려는 협박)"
     },
     {
@@ -998,7 +998,7 @@
       "발음위치": "5",
       "accent": 5,
       "blank": "3,5,6,10",
-      "뜻영문": "suggesting?a?positive?and?successful?future; boding well; propitious",
+      "뜻영문": "suggesting a positive and successful future; boding well; propitious",
       "뜻한국": "향후 좋은 결과를 암시해 주는, 길조의"
     },
     {
@@ -1068,7 +1068,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "4,5",
-      "뜻영문": "?threatening to do something bad or to harm someone; menacing; pernicious; sinister",
+      "뜻영문": " threatening to do something bad or to harm someone; menacing; pernicious; sinister",
       "뜻한국": "불길한 느낌을 주는, 해를 가하려는"
     },
     {
@@ -1088,7 +1088,7 @@
       "발음위치": "5,6",
       "accent": 56,
       "blank": "2,4,6",
-      "뜻영문": "a rubber?bag?of various sizes, color, and shapes that becomes larger when filled with air",
+      "뜻영문": "a rubber bag of various sizes, color, and shapes that becomes larger when filled with air",
       "뜻한국": "풍선"
     },
     {
@@ -1098,7 +1098,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "2,3,6",
-      "뜻영문": "?blatant advertising or publicity; hype / advertize noisily or blatantly",
+      "뜻영문": " blatant advertising or publicity; hype / advertize noisily or blatantly",
       "뜻한국": "지나치게 과장된 선전[홍보](를 하다)"
     },
     {
@@ -1118,7 +1118,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "2,3,5",
-      "뜻영문": "causing?distress, harm, or destruction; baleful; maleficent; pernicious",
+      "뜻영문": "causing distress, harm, or destruction; baleful; maleficent; pernicious",
       "뜻한국": "고통, 손상, 파괴 등을 가져오는"
     },
     {
@@ -1139,7 +1139,7 @@
       "accent": 5,
       "blank": "2,4,6",
       "뜻영문": "a heavy firing of weapons / a great amount of something directed at someone",
-      "뜻한국": "집중 포화, 엄청난 양의 질문?비난 같은 것"
+      "뜻한국": "집중 포화, 엄청난 양의 질문 비난 같은 것"
     },
     {
       "word": "BASK",
@@ -1148,7 +1148,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "2,4",
-      "뜻영문": "to?lie?or?sit?enjoying?the?warmth / to enjoy a pleasant situation; relish; savor",
+      "뜻영문": "to lie or sit enjoying the warmth / to enjoy a pleasant situation; relish; savor",
       "뜻한국": "햇볕을 쬐다[일광욕하다], 만끽하다"
     },
     {
@@ -1178,7 +1178,7 @@
       "발음위치": "4",
       "accent": 4,
       "blank": "2,5,7",
-      "뜻영문": "to?constantly cause?problems?for someone or something; plague; torment",
+      "뜻영문": "to constantly cause problems for someone or something; plague; torment",
       "뜻한국": "끊임없이 문제점을 유발하거나 괴롭히다"
     },
     {
@@ -1198,7 +1198,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "3,5,7,8",
-      "뜻영문": "showing a ready disposition to fight;?belligerent;?pugnacious.",
+      "뜻영문": "showing a ready disposition to fight; belligerent; pugnacious.",
       "뜻한국": "싸우려고 하는, 호전적인"
     },
     {
@@ -1208,7 +1208,7 @@
       "발음위치": "2|6|8",
       "accent": 4,
       "blank": "2,5,8,9",
-      "뜻영문": "intending?or?showing?goodwill; doing good or giving aid to others; charitable",
+      "뜻영문": "intending or showing goodwill; doing good or giving aid to others; charitable",
       "뜻한국": "친절하고 후하게 베푸는, 자선을 베푸는"
     },
     {
@@ -1288,7 +1288,7 @@
       "발음위치": "3,4",
       "accent": 0,
       "blank": "4,5",
-      "뜻영문": "a?food?baked from a kneaded dough made with?flour,?water, yeast,?etc",
+      "뜻영문": "a food baked from a kneaded dough made with flour, water, yeast, etc",
       "뜻한국": "빵"
     },
     {
@@ -1298,7 +1298,7 @@
       "발음위치": "3,4",
       "accent": 34,
       "blank": "2,4,6,7",
-      "뜻영문": "the first meal of the day eaten in the?morning.",
+      "뜻영문": "the first meal of the day eaten in the morning.",
       "뜻한국": "아침 식사"
     },
     {
@@ -1318,7 +1318,7 @@
       "발음위치": "4",
       "accent": 4,
       "blank": "2,4,7,10",
-      "뜻영문": "causing?great?damage?or?suffering; disastrous",
+      "뜻영문": "causing great damage or suffering; disastrous",
       "뜻한국": "상당한 충격과 고통을 유발하는"
     },
     {
@@ -1328,7 +1328,7 @@
       "발음위치": "2",
       "accent": 0,
       "blank": "2,3",
-      "뜻영문": "to speak in a loud voice / to use a?phone?to?talk?to someone",
+      "뜻영문": "to speak in a loud voice / to use a phone to talk to someone",
       "뜻한국": "부르다, 전화하다"
     },
     {
@@ -1338,7 +1338,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "4,5,7",
-      "뜻영문": "showing?no concern about the problems of other people; indifferent; unsympathetic",
+      "뜻영문": "showing no concern about the problems of other people; indifferent; unsympathetic",
       "뜻한국": "다른 사람의 문제 및 고통 등에 무관심한"
     },
     {
@@ -1438,7 +1438,7 @@
       "발음위치": "3",
       "accent": 3,
       "blank": "3,5",
-      "뜻영문": "to?chew?food?noisily",
+      "뜻영문": "to chew food noisily",
       "뜻한국": "큰 소리를 내며 씹어 먹다"
     },
     {
@@ -1468,7 +1468,7 @@
       "발음위치": "2,3",
       "accent": 5,
       "blank": "4,5,7",
-      "뜻영문": "to come?or grow together to?form?one thing or?system; combine",
+      "뜻영문": "to come or grow together to form one thing or system; combine",
       "뜻한국": "한 그룹으로[덩어리로] 결합[연합]하다"
     },
     {
@@ -1498,7 +1498,7 @@
       "발음위치": "2,3,4",
       "accent": 2,
       "blank": "2,5,7",
-      "뜻영문": "giving a lot of?attention?to what you are doing to?avoid?harm or?mistakes; cautious",
+      "뜻영문": "giving a lot of attention to what you are doing to avoid harm or mistakes; cautious",
       "뜻한국": "조심스러운"
     },
     {
@@ -1509,7 +1509,7 @@
       "accent": 0,
       "blank": "3,5",
       "뜻영문": "to go up or ascend by using the feet and often the hands",
-      "뜻한국": "(산?나무?사다리) 오르다"
+      "뜻한국": "(산 나무 사다리) 오르다"
     },
     {
       "word": "COLOSSAL",
@@ -1518,7 +1518,7 @@
       "발음위치": "4",
       "accent": 4,
       "blank": "2,4,5",
-      "뜻영문": "extremely?large: gigantic; prodigious; stupendous",
+      "뜻영문": "extremely large: gigantic; prodigious; stupendous",
       "뜻한국": "거대한"
     },
     {
@@ -1578,7 +1578,7 @@
       "발음위치": "3",
       "accent": 3,
       "blank": "4,5",
-      "뜻영문": "a set of?beliefs?that?guides the actions of a person or group; creed",
+      "뜻영문": "a set of beliefs that guides the actions of a person or group; creed",
       "뜻한국": "행동의 바탕이 되는 신념"
     },
     {
@@ -1668,7 +1668,7 @@
       "발음위치": "2,3",
       "accent": 2,
       "blank": "2,4",
-      "뜻영문": "small?and?attractive?in a?delicate?way / done with small and careful movements",
+      "뜻영문": "small and attractive in a delicate way / done with small and careful movements",
       "뜻한국": "작고 예쁜, (동작) 작고 세심한"
     },
     {
@@ -1708,7 +1708,7 @@
       "발음위치": "5,6,7",
       "accent": 5,
       "blank": "4,5",
-      "뜻영문": "to express strong disapproval of something;?condemn; censure",
+      "뜻영문": "to express strong disapproval of something; condemn; censure",
       "뜻한국": "옳지 않다고 (공개적으로) 강하게 비난하다"
     },
     {
@@ -1748,7 +1748,7 @@
       "발음위치": "7,8",
       "accent": 7,
       "blank": "3,5,7",
-      "뜻영문": "a?messy?or?confused?condition,?lacking?organization; chaos",
+      "뜻영문": "a messy or confused condition, lacking organization; chaos",
       "뜻한국": "정돈이 안 된 무질서하고 혼란스러운 상황"
     },
     {
@@ -1758,7 +1758,7 @@
       "발음위치": "7",
       "accent": 7,
       "blank": "3,6,7",
-      "뜻영문": "to?clean?by using?chemicals?to?kill?germs and bacteria?that?cause?disease",
+      "뜻영문": "to clean by using chemicals to kill germs and bacteria that cause disease",
       "뜻한국": "세균 등을 완전히 없애기 위해 소독하다"
     },
     {
@@ -1768,7 +1768,7 @@
       "발음위치": "6,7,8",
       "accent": 5,
       "blank": "2,5,7,8",
-      "뜻영문": "a?lack?of?connection?between two things; disconnection",
+      "뜻영문": "a lack of connection between two things; disconnection",
       "뜻한국": "연결돼야 할 부분의 단절[분리]"
     },
     {
@@ -1778,7 +1778,7 @@
       "발음위치": "5",
       "accent": 5,
       "blank": "2,5,6",
-      "뜻영문": "to speak contemptuously of;?belittle; depreciate",
+      "뜻영문": "to speak contemptuously of; belittle; depreciate",
       "뜻한국": "얕보는[깔보는] 투로 비판하다"
     },
     {
@@ -1798,7 +1798,7 @@
       "발음위치": "5",
       "accent": 5,
       "blank": "2,4",
-      "뜻영문": "?to?swell?and?become?large because of?pressure?from inside; dilate; expand; swell",
+      "뜻영문": " to swell and become large because of pressure from inside; dilate; expand; swell",
       "뜻한국": "내부 압력으로 부풀어오르다"
     },
     {
@@ -1888,7 +1888,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "2,3",
-      "뜻영문": "fool or hoax; deceive;?delude;?trick / a person who is easily deceived or tricked",
+      "뜻영문": "fool or hoax; deceive; delude; trick / a person who is easily deceived or tricked",
       "뜻한국": "속이다, 잘 속아넘어가는 사람"
     },
     {
@@ -1938,7 +1938,7 @@
       "발음위치": "4,5",
       "accent": 4,
       "blank": "2,4,6",
-      "뜻영문": "to form a?circle?around; surround; encompass:",
+      "뜻영문": "to form a circle around; surround; encompass:",
       "뜻한국": "원모양으로 둘러싸다"
     },
     {
@@ -2048,7 +2048,7 @@
       "발음위치": "4,5",
       "accent": 45,
       "blank": "3,4",
-      "뜻영문": "to give a?detailed?explanation?of something: expatiate; elaborate",
+      "뜻영문": "to give a detailed explanation of something: expatiate; elaborate",
       "뜻한국": "자세히 설명하다"
     },
     {
@@ -2168,7 +2168,7 @@
       "발음위치": "3",
       "accent": 3,
       "blank": "4,6,7",
-      "뜻영문": "not?serious?about a?serious?subjec to be?funny?or to?appear?clever",
+      "뜻영문": "not serious about a serious subjec to be funny or to appear clever",
       "뜻한국": "경솔한 태도로 상황의 심각성을 외면하는"
     },
     {
@@ -2198,7 +2198,7 @@
       "발음위치": "3",
       "accent": 3,
       "blank": "2,4",
-      "뜻영문": "soft, light, and like?wool?or?fur: downy",
+      "뜻영문": "soft, light, and like wool or fur: downy",
       "뜻한국": "부드러운 털로 덮인, 부드럽고 폭신한"
     },
     {
@@ -2208,7 +2208,7 @@
       "발음위치": "2,3",
       "accent": 2,
       "blank": "2,4",
-      "뜻영문": "to?prevent?someone from being?successful / a very thin and light sheet of metal",
+      "뜻영문": "to prevent someone from being successful / a very thin and light sheet of metal",
       "뜻한국": "가로막아 좌절시키다, 호일, 좋게 대조되는 것"
     },
     {
@@ -2298,7 +2298,7 @@
       "발음위치": "2",
       "accent": 0,
       "blank": "2,3",
-      "뜻영문": "a substance that is like air?/ gasoline; petrol",
+      "뜻영문": "a substance that is like air / gasoline; petrol",
       "뜻한국": "가스, 휘발유"
     },
     {
@@ -2338,8 +2338,8 @@
       "발음위치": "2,3",
       "accent": 23,
       "blank": "2,4",
-      "뜻영문": "urge someone to?stimulate?some action; provoke; spur",
-      "뜻한국": "자극을 해서 ???하도록 부추기다, 부추김"
+      "뜻영문": "urge someone to stimulate some action; provoke; spur",
+      "뜻한국": "자극을 해서    하도록 부추기다, 부추김"
     },
     {
       "word": "GRAB",
@@ -2348,7 +2348,7 @@
       "발음위치": "3",
       "accent": 0,
       "blank": "2,3",
-      "뜻영문": "to take and hold something?suddenly?and?roughly; snatch",
+      "뜻영문": "to take and hold something suddenly and roughly; snatch",
       "뜻한국": "재빨리 꽉 쥐다"
     },
     {
@@ -2388,7 +2388,7 @@
       "발음위치": "3",
       "accent": 0,
       "blank": "2,5",
-      "뜻영문": "to keep complain?about something in an annoying way; grumble / a nagging complaint",
+      "뜻영문": "to keep complain about something in an annoying way; grumble / a nagging complaint",
       "뜻한국": "짜증나게 계속 불평하다, 계속되는 불평"
     },
     {
@@ -2408,7 +2408,7 @@
       "발음위치": "2",
       "accent": 0,
       "blank": "2,3",
-      "뜻영문": "the?part?of the?body?at the end of the?arm?used for holding and feeling things",
+      "뜻영문": "the part of the body at the end of the arm used for holding and feeling things",
       "뜻한국": "(신체) 손, 시계 바늘, 건내 주다"
     },
     {
@@ -2418,7 +2418,7 @@
       "발음위치": "2,3",
       "accent": 2,
       "blank": "4,5",
-      "뜻영문": "?to become hard or firm; solidify / to make someone pitiless or unfeeling",
+      "뜻영문": " to become hard or firm; solidify / to make someone pitiless or unfeeling",
       "뜻한국": "굳어지다, 강해지다, 무감각하게 만들다"
     },
     {
@@ -2468,7 +2468,7 @@
       "발음위치": "2,3",
       "accent": 4,
       "blank": "3,5,6,8",
-      "뜻영문": "passing?from a?parent?to a?child?through the?genes?or as a right",
+      "뜻영문": "passing from a parent to a child through the genes or as a right",
       "뜻한국": "유전 및 권리 등이 세대를 거쳐 이어지는"
     },
     {
@@ -2488,7 +2488,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "2,5,7",
-      "뜻영문": "able to be?passed?from a?parent?or older relative?to a?child; inheritable; hereditary",
+      "뜻영문": "able to be passed from a parent or older relative to a child; inheritable; hereditary",
       "뜻한국": "질병이 유전되거나 재산이 상속될 수 있는"
     },
     {
@@ -2508,7 +2508,7 @@
       "발음위치": "2",
       "accent": 0,
       "blank": "2,3",
-      "뜻영문": "to make a long?'s'?sound / to express disapproval by hissing",
+      "뜻영문": "to make a long 's' sound / to express disapproval by hissing",
       "뜻한국": "쉬 소리(를 내다), 야유[비난]하다, 씩씩거리다"
     },
     {
@@ -2548,7 +2548,7 @@
       "발음위치": "2,3",
       "accent": 0,
       "blank": "2,4",
-      "뜻영문": "?(a dor or a wolf) to make a long, crying sound / (wind) to blow hard / shout; scream",
+      "뜻영문": " (a dor or a wolf) to make a long, crying sound / (wind) to blow hard / shout; scream",
       "뜻한국": "짐승이 짖다, 바람이 세게 불다, 크게 소리치다"
     },
     {
@@ -2628,7 +2628,7 @@
       "발음위치": "5,6,7",
       "accent": 5,
       "blank": "2,4,6",
-      "뜻영문": "to?ask?or beg for something in a?sincere and emotional way; beseech; entreat",
+      "뜻영문": "to ask or beg for something in a sincere and emotional way; beseech; entreat",
       "뜻한국": "애원[간청]하다, 간절히 바라다"
     },
     {
@@ -2639,7 +2639,7 @@
       "accent": 4,
       "blank": "2,4",
       "뜻영문": "to criticize by doubting someone’s character, honesty, or ability",
-      "뜻한국": "성품?의도 등의 진실성을 의심하며 비판하다"
+      "뜻한국": "성품 의도 등의 진실성을 의심하며 비판하다"
     },
     {
       "word": "IMPUTE",
@@ -2649,7 +2649,7 @@
       "accent": 4,
       "blank": "2,4",
       "뜻영문": "to blame someone for doing something bad; ascribe; attribute",
-      "뜻한국": "부정적 결과를 ???의 탓[책임]으로 돌리다"
+      "뜻한국": "부정적 결과를    의 탓[책임]으로 돌리다"
     },
     {
       "word": "INAUSPICIOUS",
@@ -2748,7 +2748,7 @@
       "발음위치": "6",
       "accent": 6,
       "blank": "2,4,7",
-      "뜻영문": "cruel?and?causing?suffering?to?people?or?animals; brutal",
+      "뜻영문": "cruel and causing suffering to people or animals; brutal",
       "뜻한국": "동정심과 자비가 없는, 비인도[비인간]적인"
     },
     {
@@ -2788,7 +2788,7 @@
       "발음위치": "4",
       "accent": 4,
       "blank": "2,5,6",
-      "뜻영문": "harsh or insulting words used to express blame or censure; vitriol?",
+      "뜻영문": "harsh or insulting words used to express blame or censure; vitriol ",
       "뜻한국": "상당히 거칠고 모욕적인 비난"
     },
     {
@@ -2798,7 +2798,7 @@
       "발음위치": "4",
       "accent": 4,
       "blank": "2,4,7,8",
-      "뜻영문": "done as a?habit?and not?likely?to?change; chronic; habitual",
+      "뜻영문": "done as a habit and not likely to change; chronic; habitual",
       "뜻한국": "습관적인[상습적인], 변하지 않고 계속되는"
     },
     {
@@ -2838,7 +2838,7 @@
       "발음위치": "2,3",
       "accent": 23,
       "blank": "2,6,7",
-      "뜻영문": "unhappy?because someone has something that you?want",
+      "뜻영문": "unhappy because someone has something that you want",
       "뜻한국": "질투하는"
     },
     {
@@ -2848,7 +2848,7 @@
       "발음위치": "3,4",
       "accent": 2,
       "blank": "5,6",
-      "뜻영문": "to produce clinking or tinkling sounds typical of light, resonant metal objects?",
+      "뜻영문": "to produce clinking or tinkling sounds typical of light, resonant metal objects ",
       "뜻한국": "시끄럽게 땡그랑거리는 소리(를 내다)"
     },
     {
@@ -2858,7 +2858,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "4,5,6",
-      "뜻영문": "feeling?great?happiness because of a?success; rejoicing; exultant",
+      "뜻영문": "feeling great happiness because of a success; rejoicing; exultant",
       "뜻한국": "승리 및 성공 등으로 너무 행복한"
     },
     {
@@ -2868,7 +2868,7 @@
       "발음위치": "2",
       "accent": 0,
       "blank": "2,3",
-      "뜻영문": "the?surface?of the?earth?not?covered?by?water / to arrive on the ground after a flight",
+      "뜻영문": "the surface of the earth not covered by water / to arrive on the ground after a flight",
       "뜻한국": "땅[육지], 착륙하다, 표면에 떨어지다"
     },
     {
@@ -2898,7 +2898,7 @@
       "발음위치": "1",
       "accent": 2,
       "blank": "3,4",
-      "뜻영문": "a yellow, thick-skinned fruit?that tastes sour / a manufactured item that is defective",
+      "뜻영문": "a yellow, thick-skinned fruit that tastes sour / a manufactured item that is defective",
       "뜻한국": "레몬, 엉성하고 결함이 있는 제품"
     },
     {
@@ -2918,7 +2918,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "3,4,6",
-      "뜻영문": "a place where books and other?literary?materials are?kept / a collections of similar things",
+      "뜻영문": "a place where books and other literary materials are kept / a collections of similar things",
       "뜻한국": "도서관, 수집물"
     },
     {
@@ -2958,7 +2958,7 @@
       "발음위치": "5",
       "accent": 2,
       "blank": "2,5,6",
-      "뜻영문": "having one side lower or smaller than the other; not?equally?balanced; uneven",
+      "뜻영문": "having one side lower or smaller than the other; not equally balanced; uneven",
       "뜻한국": "한쪽으로 치우친, 균형이 맞지 않는"
     },
     {
@@ -2998,7 +2998,7 @@
       "발음위치": "5",
       "accent": 2,
       "blank": "2,4",
-      "뜻영문": "?a piece of material that attracts certain metals / a thing or person that attracts",
+      "뜻영문": " a piece of material that attracts certain metals / a thing or person that attracts",
       "뜻한국": "자석, 유인하는[끌어들이는] 것"
     },
     {
@@ -3168,7 +3168,7 @@
       "발음위치": "2",
       "accent": 0,
       "blank": "2,3",
-      "뜻영문": "having no?legal?force; invalid / having no value or effect",
+      "뜻영문": "having no legal force; invalid / having no value or effect",
       "뜻한국": "법률적 효력이 없는, 가치 및 효과가 없는"
     },
     {
@@ -3238,7 +3238,7 @@
       "발음위치": "1",
       "accent": 1,
       "blank": "3,4",
-      "뜻영문": "suggesting?that something?unpleasant?will?happen; foreboding; inauspicious; ominous",
+      "뜻영문": "suggesting that something unpleasant will happen; foreboding; inauspicious; ominous",
       "뜻한국": "불길한 상황이 일어날 것임을 암시하는"
     },
     {
@@ -3268,7 +3268,7 @@
       "발음위치": "6,7,8",
       "accent": 1,
       "blank": "2,5,6",
-      "뜻영문": "over the?side?of a?boat?or?ship?and into the?water / to extremes",
+      "뜻영문": "over the side of a boat or ship and into the water / to extremes",
       "뜻한국": "배 밖으로, 버려져, 너무 지나치게(GO ~)"
     },
     {
@@ -3278,7 +3278,7 @@
       "발음위치": "1|7,8",
       "accent": 78,
       "blank": "2,5,6",
-      "뜻영문": "covered?with?plants?growing?thickly?and uncontrollably / grown to too large a size ",
+      "뜻영문": "covered with plants growing thickly and uncontrollably / grown to too large a size ",
       "뜻한국": "(식물) 너무 무성하게 자란, 너무 성장한"
     },
     {
@@ -3288,7 +3288,7 @@
       "발음위치": "6,7",
       "accent": 67,
       "blank": "2,5,6",
-      "뜻영문": "to?completely?change?something in order to improve it",
+      "뜻영문": "to completely change something in order to improve it",
       "뜻한국": "수리와 교체를 통해 완전히 개선하다"
     },
     {
@@ -3398,7 +3398,7 @@
       "발음위치": "3",
       "accent": 2,
       "blank": "2,5,6",
-      "뜻영문": "unreasonably?angry?and?annoyed?in a?childish?way; peevish; sulky",
+      "뜻영문": "unreasonably angry and annoyed in a childish way; peevish; sulky",
       "뜻한국": "아이처럼 쉽게 토라지고 짜증내는"
     },
     {
@@ -3408,7 +3408,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "2,4",
-      "뜻영문": "to?steal?things of?small?value",
+      "뜻영문": "to steal things of small value",
       "뜻한국": "가치가 높지 않은 물건을 몰래 가져가다"
     },
     {
@@ -3488,7 +3488,7 @@
       "발음위치": "5",
       "accent": 3,
       "blank": "4,5",
-      "뜻영문": "to suggest?that something unpleasant will?happen: foreshow; foreshadow; portend",
+      "뜻영문": "to suggest that something unpleasant will happen: foreshow; foreshadow; portend",
       "뜻한국": "좋지 않은 상황이 일어날 것임을 암시하다"
     },
     {
@@ -3498,7 +3498,7 @@
       "발음위치": "3",
       "accent": 3,
       "blank": "2,5,6",
-      "뜻영문": "pleasing or attractive to look at; beautiful / large or impressive / to a?large?degree; fairly",
+      "뜻영문": "pleasing or attractive to look at; beautiful / large or impressive / to a large degree; fairly",
       "뜻한국": "귀여운[예쁜], 정도가 상당한, 상당히"
     },
     {
@@ -3638,7 +3638,7 @@
       "발음위치": "2,3",
       "accent": 0,
       "blank": "3,4",
-      "뜻영문": "to?suppress?or?beat?down;?qauah; subdue / to calm fear or worry; allay",
+      "뜻영문": "to suppress or beat down; qauah; subdue / to calm fear or worry; allay",
       "뜻한국": "힘으로 진압하다, 두려움[걱정]을 진정시키다"
     },
     {
@@ -3678,7 +3678,7 @@
       "발음위치": "2,3,4",
       "accent": 23,
       "blank": "2,5",
-      "뜻영문": "making very little or no noise / not having much activity / the?state?of being?silent",
+      "뜻영문": "making very little or no noise / not having much activity / the state of being silent",
       "뜻한국": "조용한, 차분한, 조용함"
     },
     {
@@ -3718,7 +3718,7 @@
       "발음위치": "6,7,8",
       "accent": 4,
       "blank": "2,4,7,9,11",
-      "뜻영문": "difficult?to?control in a way that is playful and full of energy; boisterous; unruly",
+      "뜻영문": "difficult to control in a way that is playful and full of energy; boisterous; unruly",
       "뜻한국": "너무 시끄럽게 장난을 쳐 통제되기 힘든"
     },
     {
@@ -3728,7 +3728,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "2,4,6",
-      "뜻영문": "spreading or growing very quickly?and in a way that is difficult to control",
+      "뜻영문": "spreading or growing very quickly and in a way that is difficult to control",
       "뜻한국": "급속히 확산돼[악화돼] 제어가 안 되는"
     },
     {
@@ -3758,7 +3758,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "2,3",
-      "뜻영문": "moving or occurring quickly;?fast; swift",
+      "뜻영문": "moving or occurring quickly; fast; swift",
       "뜻한국": "빠른, 빨리 움직이는"
     },
     {
@@ -3778,7 +3778,7 @@
       "발음위치": "2,3",
       "accent": 3,
       "blank": "3,5",
-      "뜻영문": "to act in response to?something; respond / to undergo a chemical change",
+      "뜻영문": "to act in response to something; respond / to undergo a chemical change",
       "뜻한국": "반응[대응]하다, (화학) 서로 반응해 변하다"
     },
     {
@@ -3788,7 +3788,7 @@
       "발음위치": "2,3",
       "accent": 2,
       "blank": "2,6,7",
-      "뜻영문": "to?become?aware?of or?understand?something / to cause something to become real ",
+      "뜻영문": "to become aware of or understand something / to cause something to become real ",
       "뜻한국": "깨닫다, 실현시키다, 성취하다"
     },
     {
@@ -3798,7 +3798,7 @@
       "발음위치": "4",
       "accent": 23,
       "blank": "2,4,6,8",
-      "뜻영문": "based on good judgment; fair and sensible; logical / moderate in?price; not?expensive",
+      "뜻영문": "based on good judgment; fair and sensible; logical / moderate in price; not expensive",
       "뜻한국": "이성[합리]적인, (가격) 적절한"
     },
     {
@@ -3808,7 +3808,7 @@
       "발음위치": "4",
       "accent": 4,
       "blank": "2,5",
-      "뜻영문": "to refuse?a suggestion or offer in an unfriendly way; snub",
+      "뜻영문": "to refuse a suggestion or offer in an unfriendly way; snub",
       "뜻한국": "매정하게 제안 등을 거절하다"
     },
     {
@@ -3868,7 +3868,7 @@
       "발음위치": "4",
       "accent": 4,
       "blank": "2,5",
-      "뜻영문": "to make something smaller in size, amount, or number;?decrease; diminish",
+      "뜻영문": "to make something smaller in size, amount, or number; decrease; diminish",
       "뜻한국": "줄이다, 감소시키다"
     },
     {
@@ -3898,7 +3898,7 @@
       "발음위치": "4,5",
       "accent": 4,
       "blank": "2,5,6",
-      "뜻영문": "to?feel?or express great?joy?or happiness(~ at, in, over); take delight",
+      "뜻영문": "to feel or express great joy or happiness(~ at, in, over); take delight",
       "뜻한국": "아주 기뻐하다[행복해 하다](~ AT, IN, OVER)"
     },
     {
@@ -3908,7 +3908,7 @@
       "발음위치": "4,5",
       "accent": 4,
       "blank": "4,6",
-      "뜻영문": "to?join?together again; reunite / to reply to in a clever, critical way; retort",
+      "뜻영문": "to join together again; reunite / to reply to in a clever, critical way; retort",
       "뜻한국": "다시 결합[합류]하다, 날카롭게 대답하다"
     },
     {
@@ -3978,7 +3978,7 @@
       "발음위치": "3",
       "accent": 45,
       "blank": "2,4,6",
-      "뜻영문": "?to make a loud, echoing, or prolonged sound; resonate / to make a strong impression",
+      "뜻영문": " to make a loud, echoing, or prolonged sound; resonate / to make a strong impression",
       "뜻한국": "크고 깊게 울려 퍼지다, 큰 감동을 주다"
     },
     {
@@ -4119,7 +4119,7 @@
       "accent": 2,
       "blank": "2,5",
       "뜻영문": "a good taste or smell / to enjoy food or an experience as long as possible",
-      "뜻한국": "맛?향기?즐거움(을 맛보고 만끽하다)"
+      "뜻한국": "맛 향기 즐거움(을 맛보고 만끽하다)"
     },
     {
       "word": "SAVORY",
@@ -4148,7 +4148,7 @@
       "발음위치": "4,5",
       "accent": 0,
       "blank": "3,5,6",
-      "뜻영문": "to make a?high-pitched?cry when in pain or very?frightened / sharp piercing cry",
+      "뜻영문": "to make a high-pitched cry when in pain or very frightened / sharp piercing cry",
       "뜻한국": "소리치다, 비명"
     },
     {
@@ -4188,7 +4188,7 @@
       "발음위치": "2,3",
       "accent": 0,
       "blank": "3,4",
-      "뜻영문": "to?burn?or char the?surface?of something with?sudden?and strong?heat",
+      "뜻영문": "to burn or char the surface of something with sudden and strong heat",
       "뜻한국": "강한 열로 표면을 태우다, 강한 인상을 남기다"
     },
     {
@@ -4208,7 +4208,7 @@
       "발음위치": "4",
       "accent": 2,
       "blank": "2,4,5",
-      "뜻영문": "able?to?experience?feelings",
+      "뜻영문": "able to experience feelings",
       "뜻한국": "느낄 수 있는, 감각이 있는"
     },
     {
@@ -4248,7 +4248,7 @@
       "발음위치": "3,4",
       "accent": 34,
       "blank": "4,5,6",
-      "뜻영문": "?the body part where the arms join the trunk of the body / to carry a burden",
+      "뜻영문": " the body part where the arms join the trunk of the body / to carry a burden",
       "뜻한국": "어깨, 갓길, 부담[책임]을 지다"
     },
     {
@@ -4259,7 +4259,7 @@
       "accent": 4,
       "blank": "2,4,6",
       "뜻영문": "to contract and wrinkle from heat, cold, or dryness; wither / decrease; shrink",
-      "뜻한국": "열기?추위?노쇠 등으로 마르고 시들다"
+      "뜻한국": "열기 추위 노쇠 등으로 마르고 시들다"
     },
     {
       "word": "SUGAR",
@@ -4338,7 +4338,7 @@
       "발음위치": "3",
       "accent": 0,
       "blank": "3,4",
-      "뜻영문": "to?satisfy?a?feeling?of being?thirsty?or of?wanting?something; quench; allay; assuage",
+      "뜻영문": "to satisfy a feeling of being thirsty or of wanting something; quench; allay; assuage",
       "뜻한국": "갈증 및 욕망을 풀다[가라앉히다)"
     },
     {
@@ -4388,7 +4388,7 @@
       "발음위치": "5,6",
       "accent": 0,
       "blank": "4,5",
-      "뜻영문": "having an even or level surface free from roughness?or bumps",
+      "뜻영문": "having an even or level surface free from roughness or bumps",
       "뜻한국": "부드러운, 매끄러운"
     },
     {
@@ -4498,7 +4498,7 @@
       "발음위치": "3,4",
       "accent": 34,
       "blank": "4,5,6",
-      "뜻영문": "to?argue?over something that is not?important; bicker; quibble",
+      "뜻영문": "to argue over something that is not important; bicker; quibble",
       "뜻한국": "사소한 것을 두고 다투다, 그런 다툼"
     },
     {
@@ -4618,7 +4618,7 @@
       "발음위치": "2,3",
       "accent": 3,
       "blank": "3,4,6",
-      "뜻영문": "to take money or property from someone by using tricks?",
+      "뜻영문": "to take money or property from someone by using tricks ",
       "뜻한국": "속여서 돈을 빼앗다"
     },
     {
@@ -4648,7 +4648,7 @@
       "발음위치": "2,3",
       "accent": 2,
       "blank": "2,4",
-      "뜻영문": "later than they should be?",
+      "뜻영문": "later than they should be ",
       "뜻한국": "더딘, 느린, 굼뜬 "
     },
     {
@@ -4688,7 +4688,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "2,4",
-      "뜻영문": "becoming easily?impatient?or?angry; cranky; fractious; irritiable; peevish",
+      "뜻영문": "becoming easily impatient or angry; cranky; fractious; irritiable; peevish",
       "뜻한국": "쉽게 안달하거나 짜증을 내는"
     },
     {
@@ -4738,7 +4738,7 @@
       "발음위치": "7",
       "accent": 7,
       "blank": "3,5,6,8",
-      "뜻영문": "fear?or?worry?about what is going to?happen; perturbation",
+      "뜻영문": "fear or worry about what is going to happen; perturbation",
       "뜻한국": "일어날 수 있는 상황에 대한 두려움 및 근심 "
     },
     {
@@ -4748,7 +4748,7 @@
       "발음위치": "5,6,7",
       "accent": 2,
       "blank": "4,5,6",
-      "뜻영문": "a bluish-green stone used often in jewelry?/ bluish green",
+      "뜻영문": "a bluish-green stone used often in jewelry / bluish green",
       "뜻한국": "(보석) 청록색의 터키석, 청록색의"
     },
     {
@@ -4788,7 +4788,7 @@
       "발음위치": "1",
       "accent": 5,
       "blank": "3,5,7,8",
-      "뜻영문": "a?portable?device used for?protection?from the rain or sun",
+      "뜻영문": "a portable device used for protection from the rain or sun",
       "뜻한국": "우산"
     },
     {
@@ -4828,7 +4828,7 @@
       "발음위치": "4",
       "accent": 4,
       "blank": "2,4",
-      "뜻영문": "more than is?necessary or?reasonable; excessively",
+      "뜻영문": "more than is necessary or reasonable; excessively",
       "뜻한국": "너무 지나치게, 과도하게"
     },
     {
@@ -4918,7 +4918,7 @@
       "발음위치": "3",
       "accent": 2,
       "blank": "2,5,7",
-      "뜻영문": "expressing?angry?feelings; violent / expressing great?energy; passionate",
+      "뜻영문": "expressing angry feelings; violent / expressing great energy; passionate",
       "뜻한국": "반발 및 요구 등이 격렬한, 열정적인"
     },
     {
@@ -4938,7 +4938,7 @@
       "발음위치": "2",
       "accent": 2,
       "blank": "3,4",
-      "뜻영문": "toxin secreted by certain snakes and poisonous insects?",
+      "뜻영문": "toxin secreted by certain snakes and poisonous insects ",
       "뜻한국": "뱀 등의 독, 상당한 적대감"
     },
     {
@@ -4958,7 +4958,7 @@
       "발음위치": "4,5",
       "accent": 2,
       "blank": "3,4",
-      "뜻영문": "the?place?where a?public?event?or?meeting?happens",
+      "뜻영문": "the place where a public event or meeting happens",
       "뜻한국": "경기 및 이벤트 등이 열리는 장소"
     },
     {
@@ -4988,7 +4988,7 @@
       "발음위치": "2|5",
       "accent": 5,
       "blank": "2,4,7,9",
-      "뜻영문": "disposed or inclined to seek revenge;?revengeful; vengeful",
+      "뜻영문": "disposed or inclined to seek revenge; revengeful; vengeful",
       "뜻한국": "원한을 품은, 당한 것을 복수하려고 하는"
     },
     {
@@ -4998,7 +4998,7 @@
       "발음위치": "2,3",
       "accent": 5,
       "blank": "2,4,5",
-      "뜻영문": "a small, wooden musical instrument that has four strings?and is played with a bow",
+      "뜻영문": "a small, wooden musical instrument that has four strings and is played with a bow",
       "뜻한국": "바이올린"
     },
     {
@@ -5008,7 +5008,7 @@
       "발음위치": "5,6",
       "accent": 2,
       "blank": "2,4",
-      "뜻영문": "thick?and?sticky?and does not?flow?easily; gluey; glutinous",
+      "뜻영문": "thick and sticky and does not flow easily; gluey; glutinous",
       "뜻한국": "액체가 걸쭉하고 끈적한"
     },
     {
@@ -5118,7 +5118,7 @@
       "발음위치": "2",
       "accent": 0,
       "blank": "3,4",
-      "뜻영문": "a very?large?sea?mammal?that?breathes?through a hole on the head",
+      "뜻영문": "a very large sea mammal that breathes through a hole on the head",
       "뜻한국": "고래"
     },
     {
@@ -5128,7 +5128,7 @@
       "발음위치": "2",
       "accent": 34,
       "blank": "2,4,7,9",
-      "뜻영문": "a small open?cart?with one wheel and two handles that is used for carrying things",
+      "뜻영문": "a small open cart with one wheel and two handles that is used for carrying things",
       "뜻한국": "흙 등을 담아 운반하는 바퀴 1개의 손수레"
     },
     {
@@ -5178,7 +5178,7 @@
       "발음위치": "1,2,3,4",
       "accent": 12,
       "blank": "2,5",
-      "뜻영문": "to feel?anxious?or?uneasy about something dangerous or uncertain / a feeling of anxiety",
+      "뜻영문": "to feel anxious or uneasy about something dangerous or uncertain / a feeling of anxiety",
       "뜻한국": "걱정하다, 걱정"
     },
     {
