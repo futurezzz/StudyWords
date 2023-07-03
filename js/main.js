@@ -217,7 +217,7 @@ function notCorrect(){
     // 연속으로 누르는 것을 방지하기 위함
     isAvailable = true;
 
-  },350)
+  },450)
   isAvailable = false;
 }
 
@@ -255,7 +255,7 @@ function yesCorrect(point){
     blankTurn = parseInt(blank[0])-1;
     focusBlank(blankTurn);
     isAvailable = true;
-  },350)
+  },400)
 
 }
 
