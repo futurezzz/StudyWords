@@ -65,7 +65,6 @@ mainChapter.addEventListener('click', (e)=> {
   if(!isAvailable){
     return;
   }
-
   // 누른 레벨버튼에서 숫자만 추출하여 level변수에 넣음
   level = e.target.textContent.substr(6,1);
   mainUnit.style.visibility = 'hidden';
@@ -73,7 +72,6 @@ mainChapter.addEventListener('click', (e)=> {
     wordVisibility.style.opacity = 1;
     // level에 맞는 단어들을 불러옴
     levelItems = wordArray.filter(word => word.level == level) 
-console.log(levelItems);
     makeWordSerialRandom();
     displayQuiz(wordArray);
     console.log("레벨 아이템 총:",levelItems.length," 개")
@@ -191,6 +189,7 @@ function init(){
 function displayQuiz(wordArray){
     displayItems(levelItems);
     displayKeyboard(levelItems);
+    displayAccent();
     blankTurn = parseInt(blank[0])-1;
     console.log('blankTurn',blankTurn);
     focusBlank(blankTurn);
@@ -218,7 +217,7 @@ function notCorrect(){
     // 연속으로 누르는 것을 방지하기 위함
     isAvailable = true;
 
-  },500)
+  },350)
   isAvailable = false;
 }
 
@@ -256,7 +255,7 @@ function yesCorrect(point){
     blankTurn = parseInt(blank[0])-1;
     focusBlank(blankTurn);
     isAvailable = true;
-  },500)
+  },350)
 
 }
 
@@ -268,7 +267,7 @@ function afterCorrect(){
   nextButton.style.visibility = 'visible';
   // console.log(levelItems[wordSerial].word);
   speech(levelItems[wordSerial].word);
-  displayAccent();
+  
   attainablePoint.classList.add('attainable-point-afterCorrect')
   setTimeout(function(){
     displayPoint(attainableScoreValue);
@@ -403,7 +402,8 @@ function makeWordSerialRandom(){
 // 단어 출력하기(공백도 함께)
 function displayItems(items){
   wordSerial = parseInt(wordSerialRandom10[serial])-1;
-  // wordSerial = 33;
+  // wordSerial = 80;
+  console.log('wordSerial ',wordSerial)
   wordLength = items[wordSerial].word.length;
   wordWidth = wordLength < 10 ? 35 : 28;
   // console.log(items[wordSerial]);
@@ -491,6 +491,7 @@ function displayPronunciationSymbol(){
   let arrayLength = pronunciationSpotArray.length;
   let symbol = pronunciationArray[pronunciationSymbolIndex].pronunciation;
   let symbolText = symbol;
+  console.log(symbol)
   
   // 표시위치가 2개 이상인 경우
   // else if(arrayLength > 1) {
@@ -509,19 +510,22 @@ function displayPronunciationSymbol(){
   // symbol이 'SILENT'를 포함하고 있으면 SILENT를 제외한 뒤의 글자만 사용한다.
   // symbol = !symbol.includes('SILENT') ? symbol : symbol.replace('SILENT ',"");
   
+
   if(symbol.includes('SILENT')){
-    symbolText = symbol.replace('SILENT ',"");
+    symbolText = ' ';
     let liS = document.createElement('li');
     liS.classList.add('pronuciationSilent');
     let widthS = (pronunciationSpot.length === 1) ? 26 : 28+(symbolText.length*3);
     liS.style.width = `${widthS}px`;
     liS.style.height = `${widthS}px`;
-    liS.style.marginTop = '2px';
+    liS.style.marginTop = '3px';
     let extraMargin = (pronunciationSpot.length == symbolText.length) ? 5 : 2+wordWidth*(pronunciationSpot.length - symbolText.length)/2;
     liS.style.marginLeft = `${marginLeft+extraMargin}px`;
     console.log(pronunciationSpot.length, symbolText.length, marginLeft, extraMargin, widthS)
     pronunciationUl.append(liS);
   }
+
+
   liP.textContent = symbolText;
   pronunciationUl.append(liP);
 
