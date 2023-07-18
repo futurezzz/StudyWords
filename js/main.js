@@ -150,6 +150,26 @@ nextButton.addEventListener('click',()=>{
   
   console.log("wordSerial: ", wordSerial);
 
+   ////////////////////////////////////////////////////////////////////////////
+   // 10문제를 맞히고 나면 thumbsup 아이콘이 나타났다가 화면을 지우고 다시 시작함
+    if(serial === 2){
+    serial = 0;
+    audioClear.play();
+    recessUnit.style.visibility = 'visible';
+    recessUnit.classList.add('thumbsUp');
+    wordVisibility.style.opacity = 0;
+    makeWordSerialRandom();
+    setTimeout(function(){
+      recessUnit.style.visibility = 'hidden';
+      recessUnit.classList.remove('thumbsUp');
+      wordVisibility.style.opacity = 1;
+      displayButtons();
+      displayQuiz(levelItems);
+      isAvailable = true;
+    },1100)
+    return;
+  }
+
   displayButtons();
   displayQuiz(levelItems)
 })
@@ -273,23 +293,7 @@ function afterCorrect(){
     displayPoint(attainableScoreValue);
   },1100)
 
-  // 10문제를 맞히고 나면 thumbsup 아이콘이 나타났다가 화면을 지우고 다시 시작함
-  if(serial === 9){
-    serial = 0;
-    audioClear.play();
-    recessUnit.style.visibility = 'visible';
-    recessUnit.classList.add('thumbsUp');
-    wordVisibility.style.opacity = 0;
-    makeWordSerialRandom();
-    setTimeout(function(){
-      recessUnit.style.visibility = 'hidden';
-      recessUnit.classList.remove('thumbsUp');
-      wordVisibility.style.opacity = 1;
-      displayButtons();
-      displayQuiz(levelItems);
-      isAvailable = true;
-    },1100)
-  }
+
   
 }
 
@@ -491,7 +495,7 @@ function displayPronunciationSymbol(){
   let arrayLength = pronunciationSpotArray.length;
   let symbol = pronunciationArray[pronunciationSymbolIndex].pronunciation;
   let symbolText = symbol;
-  console.log(symbol)
+  // console.log(symbol)
   
   // 표시위치가 2개 이상인 경우
   // else if(arrayLength > 1) {
@@ -522,7 +526,7 @@ function displayPronunciationSymbol(){
     let extraMargin = (pronunciationSpot.length == symbolText.length) ? 5 : 2+wordWidth*(pronunciationSpot.length - symbolText.length)/2;
     liS.style.marginLeft = `${marginLeft+extraMargin}px`;
     console.log(pronunciationSpot.length, symbolText.length, marginLeft, extraMargin, widthS)
-    pronunciationUl.append(liS);
+    // pronunciationUl.append(liS);
   }
 
 
