@@ -15,6 +15,7 @@ const wordArrayUl = document.querySelector('.word-array-ul');
 const hintButton = document.querySelector('.hint-button');
 const listenButton = document.querySelector('.listen-button');
 const nextButton = document.querySelector('.next-button');
+const languageButton = document.querySelector('.language-button');
 const pointToday = document.querySelector('.point-today-value');
 const pointTotal = document.querySelector('.point-total-value');
 const keyboardConatiner = document.querySelector('.keyboard-container');
@@ -152,7 +153,7 @@ nextButton.addEventListener('click',()=>{
 
    ////////////////////////////////////////////////////////////////////////////
    // 10문제를 맞히고 나면 thumbsup 아이콘이 나타났다가 화면을 지우고 다시 시작함
-    if(serial === 9){
+    if(serial === 10){
     serial = 0;
     audioClear.play();
     recessUnit.style.visibility = 'visible';
@@ -175,7 +176,18 @@ nextButton.addEventListener('click',()=>{
 })
 
 
-
+languageButton.addEventListener('click',()=>{
+  if(languageButton.textContent == 'eng▶') {
+    wordExplanation.textContent =  wordArray[wordSerial].뜻영문;
+    languageButton.textContent = 'kor▶'
+    languageButton.style.backgroundColor = '#666';
+  }
+  else {
+    wordExplanation.textContent = wordArray[wordSerial].뜻한글;
+    languageButton.textContent = 'eng▶'
+    languageButton.style.backgroundColor = '#557';
+  }
+})
 
 // functions-------------------------------------------------------------
 
