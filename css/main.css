@@ -282,7 +282,7 @@ body {
   background-position: center center;
   /* filter: invert(0%) sepia(100%) saturate(100%) hue-rotate(197deg) brightness(0%) contrast(100%); */
   filter: invert(18%) sepia(95%) saturate(4379%) hue-rotate(359deg) brightness(91%) contrast(137%);
-  opacity: 0.3;
+  opacity: 0.35;
   /* filter: invert(58%) sepia(59%) saturate(8%) hue-rotate(33deg) brightness(107%) contrast(85%); */
 }
 
@@ -387,7 +387,7 @@ body {
 
 .next-button {
   position: absolute;
-  bottom: 260px;
+  /* bottom: 0px; */
   right: -30px;
   z-index: 100;
   visibility: hidden;
@@ -397,6 +397,24 @@ body {
   padding-left: 5px;
   line-height: 50px;
   background-color: #333;
+  color: var(--white);
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px black;
+}
+
+.language-button {
+  position: absolute;
+  bottom: 373px;
+  right: -110px;
+  z-index: 100;
+  width: 55px;
+  height: 25px;
+  line-height: 27px;
+  font-size: 16px;
+  background-color: #666;
+  /* background-color: #a53521; */
   color: var(--white);
   border-radius: 5px;
   user-select: none;
