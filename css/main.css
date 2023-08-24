@@ -8,6 +8,7 @@
   font-family: 'Foldit', cursive;
   font-family: 'Noto Sans KR', sans-serif;
   font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Jeju Gothic', sans-serif;
 }
 
 :root {
@@ -205,15 +206,23 @@ body {
   justify-content: center;
   align-items: center;
   margin: 15px 0;
+  padding: 0 10px;
   height: 80px;
   width: 85vw;
   font-family: 'Kanit';
+  /* font-weight: 400; */
   line-height: 18px;
   font-size: 18px;
+  /* line-height: 20px; */
   color: var(--dark-blue-color);
   background-color: var(--button-color);
 }
 
+.word-explanation-kor {
+  font-family: 'jejugothic','Noto Sans KR';
+  font-size: 16px;
+  line-height: 19px;
+}
 
 .word-array-ul, .word-accent-ul, .pronunciation-ul {
   list-style: none;
@@ -405,13 +414,13 @@ body {
 }
 
 .language-button {
-  position: absolute;
-  bottom: 373px;
-  right: -110px;
+  position: relative;
+  bottom: 25px;
+  left: 85%;
   z-index: 100;
   width: 55px;
   height: 25px;
-  line-height: 27px;
+  line-height: 25px;
   font-size: 16px;
   background-color: #666;
   /* background-color: #a53521; */
