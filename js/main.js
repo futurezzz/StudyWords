@@ -178,14 +178,16 @@ nextButton.addEventListener('click',()=>{
 
 languageButton.addEventListener('click',()=>{
   if(languageButton.textContent == 'eng▶') {
-    wordExplanation.textContent =  wordArray[wordSerial].뜻영문;
+    wordExplanation.textContent =  levelItems[wordSerial].뜻영문;
     languageButton.textContent = 'kor▶'
     languageButton.style.backgroundColor = '#666';
+    wordExplanation.classList.remove('word-explanation-kor');
   }
   else {
-    wordExplanation.textContent = wordArray[wordSerial].뜻한글;
+    wordExplanation.textContent = levelItems[wordSerial].뜻한글;
     languageButton.textContent = 'eng▶'
     languageButton.style.backgroundColor = '#557';
+    wordExplanation.classList.add('word-explanation-kor');
   }
 })
 
@@ -327,7 +329,14 @@ function displayButtons(){
   nextButton.style.visibility = 'hidden';
   hintButton.style.display = 'block';
   listenButton.style.display = 'none';
-  
+
+  // 해석이 한글로 되어있으면 기본값인 영문으로 바꾸어놓기
+  if(languageButton.textContent = 'eng▶'){
+    languageButton.textContent = 'kor▶'
+    languageButton.style.backgroundColor = '#666';
+    wordExplanation.classList.remove('word-explanation-kor');
+  }
+
   attainablePoint.classList.remove('attainable-point-afterCorrect');
 }
 
@@ -418,7 +427,7 @@ function makeWordSerialRandom(){
 // 단어 출력하기(공백도 함께)
 function displayItems(items){
   wordSerial = parseInt(wordSerialRandom10[serial])-1;
-  // wordSerial = 80;
+  // wordSerial = 257;
   console.log('wordSerial ',wordSerial)
   wordLength = items[wordSerial].word.length;
   wordWidth = wordLength < 10 ? 35 : 28;
@@ -538,7 +547,7 @@ function displayPronunciationSymbol(){
     let extraMargin = (pronunciationSpot.length == symbolText.length) ? 5 : 2+wordWidth*(pronunciationSpot.length - symbolText.length)/2;
     liS.style.marginLeft = `${marginLeft+extraMargin}px`;
     console.log(pronunciationSpot.length, symbolText.length, marginLeft, extraMargin, widthS)
-    // pronunciationUl.append(liS);
+    pronunciationUl.append(liS);
   }
 
 
